@@ -313,30 +313,16 @@ class Data {
 
   static List<ExperienceData> experienceData = [
     ExperienceData(
-      company: StringConst.COMPANY_4,
-      position: StringConst.POSITION_4,
-      companyUrl: StringConst.COMPANY_4_URL,
+      company: StringConst.COMPANY_1,
+      position: StringConst.POSITION_1,
+      companyUrl: StringConst.COMPANY_1_URL,
       roles: [
-        StringConst.COMPANY_4_ROLE_1,
-        StringConst.COMPANY_4_ROLE_2,
-        StringConst.COMPANY_4_ROLE_3,
-        StringConst.COMPANY_4_ROLE_4,
+        StringConst.COMPANY_1_ROLE_1,
+        StringConst.COMPANY_1_ROLE_2,
+        StringConst.COMPANY_1_ROLE_3,
       ],
-      location: StringConst.LOCATION_4,
-      duration: StringConst.DURATION_4,
-    ),
-    ExperienceData(
-      company: StringConst.COMPANY_3,
-      position: StringConst.POSITION_3,
-      companyUrl: StringConst.COMPANY_3_URL,
-      roles: [
-        StringConst.COMPANY_3_ROLE_1,
-        StringConst.COMPANY_3_ROLE_2,
-        StringConst.COMPANY_3_ROLE_3,
-        StringConst.COMPANY_3_ROLE_4,
-      ],
-      location: StringConst.LOCATION_3,
-      duration: StringConst.DURATION_3,
+      location: StringConst.LOCATION_1,
+      duration: StringConst.DURATION_1,
     ),
     ExperienceData(
       company: StringConst.COMPANY_2,
@@ -350,18 +336,6 @@ class Data {
       ],
       location: StringConst.LOCATION_2,
       duration: StringConst.DURATION_2,
-    ),
-    ExperienceData(
-      company: StringConst.COMPANY_1,
-      position: StringConst.POSITION_1,
-      companyUrl: StringConst.COMPANY_1_URL,
-      roles: [
-        StringConst.COMPANY_1_ROLE_1,
-        StringConst.COMPANY_1_ROLE_2,
-        StringConst.COMPANY_1_ROLE_3,
-      ],
-      location: StringConst.LOCATION_1,
-      duration: StringConst.DURATION_1,
     ),
   ];
 }

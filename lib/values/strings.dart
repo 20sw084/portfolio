@@ -111,62 +111,34 @@ class StringConst {
   static const String ANDROID_BASICS = "Android Basics";
 
   //Experience
-  static const String CURRENT_MONTH_YEAR = "May 2020 - Current";
-  static const String STARTED_MONTH_YEAR = "May 2017";
+  static const String CURRENT_MONTH_YEAR = "November 2021 - Current";
+  static const String STARTED_MONTH_YEAR = "November 2021";
 
-  static const String COMPANY_1 = "Makedu";
-  static const String COMPANY_1_URL = "https://bewsys.com/";
-  static const String POSITION_1 = "Software Engineer Intern";
+  static const String COMPANY_1 = "Upwork";
+  static const String COMPANY_1_URL = "https://www.upwork.com/freelancers/~01e3372ae04f24797d";
+  static const String POSITION_1 = "Freelance Software Engineer";
   static const String COMPANY_1_ROLE_1 =
-      "Built a Quiz app under the supervision of software engineers using PHP and Javascript";
+      "Working as Full Stack Java Developer(Flutter)";
   static const String COMPANY_1_ROLE_2 =
-      "Architected and implemented the Back-end and Front-end of a Web application used for receiving complaints and feedback from other live apps.";
+      "Working as Mobile App Developer(Flutter)";
   static const String COMPANY_1_ROLE_3 =
-      "Learnt about Database programming and SQL";
-  static const String LOCATION_1 = "Aprade - Kumasi";
-  static const String DURATION_1 = "May 2017 - July 2017";
+      "Working on Database programming, Firebase and SQL as well";
+  static const String LOCATION_1 = "Remote";
+  static const String DURATION_1 = "November 2021 - Present";
 
-  static const String COMPANY_2 = "Shrinq";
-  static const String COMPANY_2_URL = "https://shrinqghana.com/";
-  static const String POSITION_2 = "Software Engineer";
+  static const String COMPANY_2 = "Intrapreneur(Oclits)";
+  static const String COMPANY_2_URL = "https://oclits.com/";
+  static const String POSITION_2 = "Mobile App Intern";
   static const String COMPANY_2_ROLE_1 =
-      "Proposed and implemented scalable solutions to issues identified in web applications.";
+      "Proposed and implemented scalable solutions to issues identified in applications.";
   static const String COMPANY_2_ROLE_2 =
-      "Built a mobile application used to verify the authenticity of an ID to help deter fraud and provide fast and seamless customer experience";
+      "Built an E-Commerce mobile application";
   static const String COMPANY_2_ROLE_3 =
-      "Developed highly interactive mobile applications for Vodafone Ghana using Java Android";
+      "Developed highly interactive mobile applications";
   static const String COMPANY_2_ROLE_4 =
-      "Developed and maintained code for in-house and client applications using primarily using HTML, CSS, JavaScript, PHP and Laravel";
-  static const String LOCATION_2 = "Asylum Down - Accra";
-  static const String DURATION_2 = "April 2018 - June 2019";
-
-  static const String COMPANY_3 = "Bewsys";
-  static const String COMPANY_3_URL = "https://bewsys.com/";
-  static const String POSITION_3 = "Software Engineer";
-  static const String COMPANY_3_ROLE_1 =
-      "Worked with a team of two Software to build a management system for the National Prisons Service Of South Sudan";
-  static const String COMPANY_3_ROLE_2 =
-      "Interfaced with clients on a weekly basis, providing technological expertise";
-  static const String COMPANY_3_ROLE_3 =
-      "Modified existing software to correct errors, upgrade interfaces and improve performance";
-  static const String COMPANY_3_ROLE_4 =
-      "Interfaced with user experience designers and other developers to ensure thoughtful and coherent user experiences across web and mobile applications.";
-  static const String LOCATION_3 = "East Legon - Accra";
-  static const String DURATION_3 = "August 2019 - April 2020";
-
-  static const String COMPANY_4 = "Freelancer";
-  static const String COMPANY_4_URL = SITE_URL;
-  static const String POSITION_4 = "Software Engineer";
-  static const String COMPANY_4_ROLE_1 =
-      "Work collaboratively with a user experience designer to bring mobile and progressive apps to life using Flutter.";
-  static const String COMPANY_4_ROLE_2 =
-      "Write modern, performant, maintainable code for a clients and personal open source projects";
-  static const String COMPANY_4_ROLE_3 =
-      "Work with a variety of different languages, platforms, frameworks, and content management systems such as Dart, JavaScript, PHP, Flutter, Laravel, Wordpress, and Bootstrap";
-  static const String COMPANY_4_ROLE_4 =
-      "Interface with clients and provide technological expertise";
-  static const String LOCATION_4 = "Santase - Kumasi";
-  static const String DURATION_4 = "May 2020 - Current";
+      "Developed and maintained code for in-house and client applications";
+  static const String LOCATION_2 = "Hyderabad - Pakistan";
+  static const String DURATION_2 = "November 2022 - January 2023";
 
   //Portfolio, Projects
   static const String LOGIN_CATALOG = "Login Catalog";

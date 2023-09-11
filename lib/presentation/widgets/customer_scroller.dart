@@ -38,34 +38,36 @@ class CustomScroller extends StatelessWidget {
       child: TweenAnimationBuilder(
         tween: Tween<double>(begin: 0, end: height),
         duration: Duration(milliseconds: duration),
-        child: Column(
-          children: [
-            InkWell(
-              onTap: onUpTap,
-              child: topController ??
-                  Icon(Icons.keyboard_arrow_up,
-                      color: AppColors.secondaryColor),
-            ),
-            SpaceH8(),
-            centerChild ??
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(4),
-                  child: Container(
-                    width: Sizes.WIDTH_6,
-                    height: Sizes.HEIGHT_6,
-                    color: scrollCenterColor,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              InkWell(
+                onTap: onUpTap,
+                child: topController ??
+                    Icon(Icons.keyboard_arrow_up,
+                        color: AppColors.secondaryColor),
+              ),
+              SpaceH8(),
+              centerChild ??
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: Container(
+                      width: Sizes.WIDTH_6,
+                      height: Sizes.HEIGHT_6,
+                      color: scrollCenterColor,
+                    ),
                   ),
-                ),
-            SpaceH8(),
-            InkWell(
-              onTap: onDownTap,
-              child: bottomController ??
-                  Icon(
-                    Icons.keyboard_arrow_down,
-                    color: AppColors.secondaryColor,
-                  ),
-            )
-          ],
+              SpaceH8(),
+              InkWell(
+                onTap: onDownTap,
+                child: bottomController ??
+                    Icon(
+                      Icons.keyboard_arrow_down,
+                      color: AppColors.secondaryColor,
+                    ),
+              )
+            ],
+          ),
         ),
         builder: (BuildContext context, double value, Widget? child) {
           return Container(
