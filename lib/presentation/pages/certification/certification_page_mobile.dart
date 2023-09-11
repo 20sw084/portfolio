@@ -83,37 +83,38 @@ class _CertificationPageMobileState extends State<CertificationPageMobile>
           itemBuilder: (BuildContext context, index) {
             double start = durationForEachPortfolio * index;
             double end = durationForEachPortfolio * (index + 1);
-            return AnimatedBuilder(
-              animation: _certificationController,
-              child: PortfolioCard(
-                imageUrl: Data.certificationData[index].image,
-                onTap: () =>
-                    _viewCertificate(Data.certificationData[index].url),
-                title: Data.certificationData[index].title,
-                subtitle: Data.certificationData[index].awardedBy,
-                actionTitle: StringConst.VIEW,
-                height: assignHeight(context: context, fraction: 0.35),
-                width: widthOfScreen(context),
-              ),
-              builder: (BuildContext context, Widget? child) {
-                return FadeTransition(
-                  opacity: Tween<double>(
-                    begin: 0,
-                    end: 1,
-                  ).animate(
-                    CurvedAnimation(
-                      parent: _certificationController,
-                      curve: Interval(
-                        start > 0.0 ? start / duration : 0.0,
-                        end > 0.0 ? end / duration : 1.0,
-                        curve: Curves.easeIn,
-                      ),
-                    ),
-                  ),
-                  child: child,
-                );
-              },
-            );
+            // TODO: WFH to this commented mine code
+            // return AnimatedBuilder(
+            //   animation: _certificationController,
+            //   child: PortfolioCard(
+            //     imageUrl: Data.certificationData[index].image,
+            //     // onTap: () =>
+            //     //     _viewCertificate(Data.certificationData[index].url),
+            //     title: Data.certificationData[index].title,
+            //     subtitle: Data.certificationData[index].awardedBy,
+            //     actionTitle: StringConst.VIEW,
+            //     height: assignHeight(context: context, fraction: 0.35),
+            //     width: widthOfScreen(context),
+            //   ),
+            //   builder: (BuildContext context, Widget? child) {
+            //     return FadeTransition(
+            //       opacity: Tween<double>(
+            //         begin: 0,
+            //         end: 1,
+            //       ).animate(
+            //         CurvedAnimation(
+            //           parent: _certificationController,
+            //           curve: Interval(
+            //             start > 0.0 ? start / duration : 0.0,
+            //             end > 0.0 ? end / duration : 1.0,
+            //             curve: Curves.easeIn,
+            //           ),
+            //         ),
+            //       ),
+            //       child: child,
+            //     );
+            //   },
+            // );
           },
         ),
       ),

@@ -24,8 +24,13 @@ class ImagePath {
 //  static const String FLUTTER_CATALOG = "$imageDir/onboarding_app.png";
 
   //Certifications
-  static const String ANDROID_BASICS_CERT = "$imageDir/android_basics_cert.png";
-  static const String ASSOCIATE_ANDROID_DEV =
-      "$imageDir/associate_android_dev.png";
-  static const String DATA_SCIENCE_CERT = "$imageDir/data_science_cert.png";
+  static const String CERT_1 = "$imageDir/1.png";
+  static const String CERT_2 = "$imageDir/2.png";
+  static const String CERT_3 = "$imageDir/3.png";
+  static const String CERT_4 = "$imageDir/4.png";
+  static const String CERT_5 = "$imageDir/5.png";
+  static const String CERT_6 = "$imageDir/6.png";
+  static const String CERT_7 = "$imageDir/7.png";
+  static const String CERT_8 = "$imageDir/8.png";
+  static const String CERT_9 = "$imageDir/9.png";
 }

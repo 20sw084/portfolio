@@ -14,18 +14,18 @@ class MenuData {
 
 class CertificationData {
   CertificationData({
-    required this.title,
+    // required this.title,
     required this.image,
     required this.imageSize,
-    required this.url,
-    required this.awardedBy,
+    // required this.url,
+    // required this.awardedBy,
   });
 
   final String image;
   final double imageSize;
-  final String url;
-  final String title;
-  final String awardedBy;
+  // final String url;
+  // final String title;
+  // final String awardedBy;
 }
 
 class ProjectDetails {
@@ -289,25 +289,67 @@ class Data {
 
   static List<CertificationData> certificationData = [
     CertificationData(
-      title: StringConst.ASSOCIATE_ANDROID_DEV,
-      url: StringConst.ASSOCIATE_ANDROID_DEV_URL,
-      image: ImagePath.ASSOCIATE_ANDROID_DEV,
+      // title: StringConst.ASSOCIATE_ANDROID_DEV,
+      // url: StringConst.ASSOCIATE_ANDROID_DEV_URL,
+      image: ImagePath.CERT_1,
       imageSize: 0.30,
-      awardedBy: StringConst.GOOGLE,
+      // awardedBy: StringConst.GOOGLE,
     ),
     CertificationData(
-      title: StringConst.DATA_SCIENCE,
-      url: StringConst.DATA_SCIENCE_CERT_URL,
-      image: ImagePath.DATA_SCIENCE_CERT,
+      // title: StringConst.DATA_SCIENCE,
+      // url: StringConst.DATA_SCIENCE_CERT_URL,
+      image: ImagePath.CERT_2,
       imageSize: 0.30,
-      awardedBy: StringConst.UDACITY,
+      // awardedBy: StringConst.UDACITY,
     ),
     CertificationData(
-      title: StringConst.ANDROID_BASICS,
-      url: StringConst.ANDROID_BASICS_CERT_URL,
-      image: ImagePath.ANDROID_BASICS_CERT,
+      // title: StringConst.DATA_SCIENCE,
+      // url: StringConst.DATA_SCIENCE_CERT_URL,
+      image: ImagePath.CERT_3,
       imageSize: 0.30,
-      awardedBy: StringConst.UDACITY,
+      // awardedBy: StringConst.UDACITY,
+    ),
+    CertificationData(
+      // title: StringConst.DATA_SCIENCE,
+      // url: StringConst.DATA_SCIENCE_CERT_URL,
+      image: ImagePath.CERT_4,
+      imageSize: 0.30,
+      // awardedBy: StringConst.UDACITY,
+    ),
+    CertificationData(
+      // title: StringConst.DATA_SCIENCE,
+      // url: StringConst.DATA_SCIENCE_CERT_URL,
+      image: ImagePath.CERT_5,
+      imageSize: 0.30,
+      // awardedBy: StringConst.UDACITY,
+    ),
+    CertificationData(
+      // title: StringConst.DATA_SCIENCE,
+      // url: StringConst.DATA_SCIENCE_CERT_URL,
+      image: ImagePath.CERT_6,
+      imageSize: 0.30,
+      // awardedBy: StringConst.UDACITY,
+    ),
+    CertificationData(
+      // title: StringConst.DATA_SCIENCE,
+      // url: StringConst.DATA_SCIENCE_CERT_URL,
+      image: ImagePath.CERT_7,
+      imageSize: 0.30,
+      // awardedBy: StringConst.UDACITY,
+    ),
+    CertificationData(
+      // title: StringConst.DATA_SCIENCE,
+      // url: StringConst.DATA_SCIENCE_CERT_URL,
+      image: ImagePath.CERT_8,
+      imageSize: 0.30,
+      // awardedBy: StringConst.UDACITY,
+    ),
+    CertificationData(
+      // title: StringConst.DATA_SCIENCE,
+      // url: StringConst.DATA_SCIENCE_CERT_URL,
+      image: ImagePath.CERT_9,
+      imageSize: 0.30,
+      // awardedBy: StringConst.UDACITY,
     ),
   ];
 

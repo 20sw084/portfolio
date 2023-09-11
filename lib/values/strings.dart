@@ -95,11 +95,11 @@ class StringConst {
 
   //Certificate Urls
   static const String ASSOCIATE_ANDROID_DEV_URL =
-      "https://www.credential.net/b296da88-d6be-4bb5-9756-b13efea3a421";
+      "https://drive.google.com/drive/u/1/folders/1GQFqJuUbnnaDqo8glGNaaemG1twILVdI";
   static const String DATA_SCIENCE_CERT_URL =
       "https://graduation.udacity.com/confirm/7CGEJAFR";
-  static const String ANDROID_BASICS_CERT_URL =
-      "https://graduation.udacity.com/confirm/9VTDRN5K";
+  // static const String ANDROID_BASICS_CERT_URL =
+  //     "https://graduation.udacity.com/confirm/9VTDRN5K";
 
   //AwardedBy
   static const String GOOGLE = "Google";

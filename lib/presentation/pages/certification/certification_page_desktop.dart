@@ -162,11 +162,12 @@ class _CertificationPageDesktopState extends State<CertificationPageDesktop>
               ),
             ),
           ),
+          // TODO WFH TO this code
           child: PortfolioCard(
             imageUrl: certificationData[i].image,
-            onTap: () => _viewCertificate(certificationData[i].url),
-            title: certificationData[i].title,
-            subtitle: certificationData[i].awardedBy,
+            // onTap: () => _viewCertificate(certificationData[i].url),
+            // title: certificationData[i].title,
+            // subtitle: certificationData[i].awardedBy,
             actionTitle: StringConst.VIEW,
             height: isDisplaySmallDesktopOrIpadPro(context)
                 ? assignHeight(context: context, fraction: 0.3)
