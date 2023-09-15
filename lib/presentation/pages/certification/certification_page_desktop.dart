@@ -162,26 +162,55 @@ class _CertificationPageDesktopState extends State<CertificationPageDesktop>
               ),
             ),
           ),
-          // TODO WFH TO this code
-          child: PortfolioCard(
-            imageUrl: certificationData[i].image,
-            // onTap: () => _viewCertificate(certificationData[i].url),
-            // title: certificationData[i].title,
-            // subtitle: certificationData[i].awardedBy,
-            actionTitle: StringConst.VIEW,
+          child: Container(
+            width: isDisplaySmallDesktopOrIpadPro(context)
+                ? assignWidth(
+              context: context,
+              fraction: 0.3,
+            )
+                : assignWidth(
+              context: context,
+              fraction: certificationData[i].imageSize,
+            ),
             height: isDisplaySmallDesktopOrIpadPro(context)
                 ? assignHeight(context: context, fraction: 0.3)
                 : assignHeight(context: context, fraction: 0.45),
-            width: isDisplaySmallDesktopOrIpadPro(context)
-                ? assignWidth(
-                    context: context,
-                    fraction: 0.3,
-                  )
-                : assignWidth(
-                    context: context,
-                    fraction: certificationData[i].imageSize,
-                  ),
-          ),
+            child: Image.asset(
+              certificationData[i].image,
+                width: isDisplaySmallDesktopOrIpadPro(context)
+                    ? assignWidth(
+                        context: context,
+                        fraction: 0.3,
+                      )
+                    : assignWidth(
+                        context: context,
+                        fraction: certificationData[i].imageSize,
+                      ),
+                height: isDisplaySmallDesktopOrIpadPro(context)
+                    ? assignHeight(context: context, fraction: 0.3)
+                    : assignHeight(context: context, fraction: 0.45),
+              fit: BoxFit.cover,
+            ),
+          )
+          // PortfolioCard(
+          //   imageUrl: certificationData[i].image,
+          //   // onTap: () => _viewCertificate(certificationData[i].url),
+          //   // title: certificationData[i].title,
+          //   // subtitle: certificationData[i].awardedBy,
+          //   actionTitle: StringConst.VIEW,
+          //   height: isDisplaySmallDesktopOrIpadPro(context)
+          //       ? assignHeight(context: context, fraction: 0.3)
+          //       : assignHeight(context: context, fraction: 0.45),
+          //   width: isDisplaySmallDesktopOrIpadPro(context)
+          //       ? assignWidth(
+          //           context: context,
+          //           fraction: 0.3,
+          //         )
+          //       : assignWidth(
+          //           context: context,
+          //           fraction: certificationData[i].imageSize,
+          //         ),
+          // ),
         ),
       );
     }
@@ -196,7 +225,7 @@ class _CertificationPageDesktopState extends State<CertificationPageDesktop>
     );
   }
 
-  void _viewCertificate(String url) {
-    Functions.launchUrl(url);
-  }
+  // void _viewCertificate(String url) {
+  //   Functions.launchUrl(url);
+  // }
 }

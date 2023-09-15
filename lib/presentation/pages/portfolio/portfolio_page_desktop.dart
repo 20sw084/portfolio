@@ -37,6 +37,8 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
       vsync: this,
     );
 
+    
+
     initTweens();
     _playAnimation();
     _controller.addStatusListener((status) {
@@ -44,7 +46,7 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
         setState(() {
           _isPortfolioVisible = true;
         });
-        WidgetsBinding.instance!.addPersistentFrameCallback((_) {
+        WidgetsBinding.instance.addPersistentFrameCallback((_) {
           _playPortfolioAnimation();
         });
       }
@@ -280,7 +282,8 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
               ),
             ),
           ),
-          child: PortfolioCard(
+          child:
+          PortfolioCard(
             imageUrl: portfolioData[i].image,
             title: portfolioData[i].title,
             subtitle: portfolioData[i].subtitle,
