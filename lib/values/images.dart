@@ -3,17 +3,15 @@ part of values;
 class ImagePath {
   //images route
   static const String imageDir = "assets/images";
-  static const String screenshotsDir = "assets/screenshots";
 
   //Images
-  static const String DEV = "$imageDir/david_legend.png";
+  static const String DEV = "$imageDir/jonny_portfolio.png";
   
 
   static const String FOOTBALL_APP = "$imageDir/football_app.png";
   static const String DOC_APP = "$imageDir/doc_tracking_muet.png";
 
   static const String PLAYSTORE = "$imageDir/playstore.png";
-//  static const String FLUTTER_CATALOG = "$imageDir/onboarding_app.png";
 
   //Certifications
   static const String CERT_1 = "$imageDir/1.png";
