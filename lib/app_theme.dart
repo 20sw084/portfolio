@@ -28,6 +28,7 @@ class AppTheme {
     );
   }
 
+
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: Color(0xFF2C3541),
     secondary: Color(0xFFEFF3F3),
