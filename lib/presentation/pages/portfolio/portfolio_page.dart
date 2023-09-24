@@ -18,9 +18,9 @@ class PortfolioPage extends StatelessWidget {
       onWillPop: () async => true,
       child: Scaffold(
         body: ScreenTypeLayout(
-          mobile: PortfolioPageMobile(),
-          tablet: PortfolioPageDesktop(),
-          desktop: PortfolioPageDesktop(),
+          mobile: const PortfolioPageMobile(),
+          tablet: const PortfolioPageDesktop(),
+          desktop: const PortfolioPageDesktop(),
         ),
       ),
     );

@@ -8,7 +8,8 @@ import 'package:my_portfolio/values/values.dart';
 import 'experience_section.dart';
 
 class ExperienceTree extends StatelessWidget {
-  ExperienceTree({
+  const ExperienceTree({
+    super.key,
     required this.experienceData,
     this.head,
     this.widthOfTree,
@@ -37,52 +38,50 @@ class ExperienceTree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Container(
-      child: ListView(
-        controller: scrollController,
-        children: [
-          Center(
-            child: Container(
-              padding: EdgeInsets.all(Sizes.PADDING_8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Sizes.RADIUS_20),
-                color: headBackgroundColor ??
-                    AppColors.primaryColor
-                        .withOpacity(AppColors.primaryColorOpacity),
-              ),
-              child: Text(
-                headTitle!,
-                style: headTitleStyle ??
-                    theme.textTheme.subtitle1!
-                        .copyWith(color: AppColors.accentColor2),
-              ),
+    return ListView(
+      controller: scrollController,
+      children: [
+        Center(
+          child: Container(
+            padding: const EdgeInsets.all(Sizes.PADDING_8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Sizes.RADIUS_20),
+              color: headBackgroundColor ??
+                  AppColors.primaryColor
+                      .withOpacity(AppColors.primaryColorOpacity),
+            ),
+            child: Text(
+              headTitle!,
+              style: headTitleStyle ??
+                  theme.textTheme.titleMedium!
+                      .copyWith(color: AppColors.accentColor2),
             ),
           ),
-          Column(
-            children: _buildExperienceBranches(
-              context: context,
-              experienceData: experienceData,
+        ),
+        Column(
+          children: _buildExperienceBranches(
+            context: context,
+            experienceData: experienceData,
+          ),
+        ),
+        Center(
+          child: Container(
+            padding: const EdgeInsets.all(Sizes.PADDING_8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Sizes.RADIUS_20),
+              color: tailBackgroundColor ??
+                  AppColors.primaryColor
+                      .withOpacity(AppColors.primaryColorOpacity),
+            ),
+            child: Text(
+              tailTitle!,
+              style: tailTitleStyle ??
+                  theme.textTheme.titleMedium!
+                      .copyWith(color: AppColors.accentColor2),
             ),
           ),
-          Center(
-            child: Container(
-              padding: EdgeInsets.all(Sizes.PADDING_8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Sizes.RADIUS_20),
-                color: tailBackgroundColor ??
-                    AppColors.primaryColor
-                        .withOpacity(AppColors.primaryColorOpacity),
-              ),
-              child: Text(
-                tailTitle!,
-                style: tailTitleStyle ??
-                    theme.textTheme.subtitle1!
-                        .copyWith(color: AppColors.accentColor2),
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -113,7 +112,8 @@ class ExperienceTree extends StatelessWidget {
 }
 
 class ExperienceBranch extends StatefulWidget {
-  ExperienceBranch({
+  const ExperienceBranch({
+    super.key,
     this.width,
     this.height = 200,
     this.roles,
@@ -151,7 +151,7 @@ class _ExperienceBranchState extends State<ExperienceBranch> {
   void initState() {
     offsetRoleLeaf = (widget.height / 5) - 10;
     offsetLocationLeaf = (widget.height / 2) - 16;
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _getHeightOfRoleLeaf();
     });
     super.initState();
@@ -182,7 +182,7 @@ class _ExperienceBranchState extends State<ExperienceBranch> {
                 .withOpacity(AppColors.primaryColorOpacity),
             innerJointColor: AppColors.primaryColor,
           ),
-      child: Container(
+      child: SizedBox(
         width: widget.width,
         height: widget.height,
         child: Stack(
@@ -200,7 +200,7 @@ class _ExperienceBranchState extends State<ExperienceBranch> {
                 ),
               ),
             ),
-            SpaceH8(),
+            const SpaceH8(),
             Positioned(
               width: widget.width! / 2,
               top: offsetRoleLeaf,
@@ -228,7 +228,8 @@ class _ExperienceBranchState extends State<ExperienceBranch> {
 }
 
 class LocationDateLeaf extends StatelessWidget {
-  LocationDateLeaf({
+  const LocationDateLeaf({
+    super.key,
     required this.duration,
     required this.location,
     this.durationIcon,
@@ -247,52 +248,51 @@ class LocationDateLeaf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Container(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                duration!,
-                style: durationTextStyle ??
-                    theme.textTheme.bodyText2!.copyWith(color: AppColors.black),
-              ),
-              SpaceW4(),
-              durationIcon ??
-                  Icon(
-                    Icons.access_time,
-                    color: AppColors.accentColor2,
-                    size: 18,
-                  ),
-            ],
-          ),
-          SpaceH8(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                location!,
-                style: locationTextStyle ??
-                    theme.textTheme.bodyText2!.copyWith(color: AppColors.black),
-              ),
-              SpaceW4(),
-              locationIcon ??
-                  Icon(
-                    Icons.location_on,
-                    color: AppColors.accentColor2,
-                    size: 18,
-                  ),
-            ],
-          )
-        ],
-      ),
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              duration!,
+              style: durationTextStyle ??
+                  theme.textTheme.bodyMedium!.copyWith(color: AppColors.black),
+            ),
+            const SpaceW4(),
+            durationIcon ??
+                const Icon(
+                  Icons.access_time,
+                  color: AppColors.accentColor2,
+                  size: 18,
+                ),
+          ],
+        ),
+        const SpaceH8(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              location!,
+              style: locationTextStyle ??
+                  theme.textTheme.bodyMedium!.copyWith(color: AppColors.black),
+            ),
+            const SpaceW4(),
+            locationIcon ??
+                const Icon(
+                  Icons.location_on,
+                  color: AppColors.accentColor2,
+                  size: 18,
+                ),
+          ],
+        )
+      ],
     );
   }
 }
 
 class RoleLeaf extends StatelessWidget {
-  RoleLeaf({
+  const RoleLeaf({
+    super.key,
     required this.company,
     required this.position,
     required this.roles,
@@ -313,33 +313,31 @@ class RoleLeaf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          InkWell(
-            onTap: onTap,
-            child: Text(
-              company!,
-              style: companyTextStyle ??
-                  theme.textTheme.subtitle1!.copyWith(
-                      fontSize: Sizes.TEXT_SIZE_18,
-                      color: AppColors.accentColor2),
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        InkWell(
+          onTap: onTap,
+          child: Text(
+            company!,
+            style: companyTextStyle ??
+                theme.textTheme.titleMedium!.copyWith(
+                    fontSize: Sizes.TEXT_SIZE_18,
+                    color: AppColors.accentColor2),
           ),
-          Text(
-            position!,
-            style: positionTextStyle ??
-                theme.textTheme.subtitle2!.copyWith(
-                    fontStyle: FontStyle.italic, color: AppColors.accentColor2),
-          ),
-          SpaceH8(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: _buildRoles(roles: roles!, context: context),
-          ),
-        ],
-      ),
+        ),
+        Text(
+          position!,
+          style: positionTextStyle ??
+              theme.textTheme.titleSmall!.copyWith(
+                  fontStyle: FontStyle.italic, color: AppColors.accentColor2),
+        ),
+        const SpaceH8(),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: _buildRoles(roles: roles!, context: context),
+        ),
+      ],
     );
   }
 
@@ -354,11 +352,11 @@ class RoleLeaf extends StatelessWidget {
         Role(
           role: roles[index],
           roleTextStyle: roleTextStyle ??
-              theme.textTheme.bodyText2!.copyWith(color: AppColors.black),
+              theme.textTheme.bodyMedium!.copyWith(color: AppColors.black),
           color: AppColors.primaryColor,
         ),
       );
-      roleWidgets.add(SpaceH8());
+      roleWidgets.add(const SpaceH8());
     }
 
     return roleWidgets;

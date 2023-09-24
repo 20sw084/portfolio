@@ -11,6 +11,8 @@ import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class PortfolioPageMobile extends StatefulWidget {
+  const PortfolioPageMobile({super.key});
+
   @override
   _PortfolioPageMobileState createState() => _PortfolioPageMobileState();
 }
@@ -55,7 +57,7 @@ class _PortfolioPageMobileState extends State<PortfolioPageMobile>
     return Scaffold(
       key: _scaffoldKey,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56.0),
+        preferredSize: const Size.fromHeight(56.0),
         child: CustomAppBar(
           title: StringConst.PORTFOLIO,
           onLeadingPressed: () {
@@ -79,7 +81,7 @@ class _PortfolioPageMobileState extends State<PortfolioPageMobile>
           ),
           itemCount: Data.portfolioData.length,
           separatorBuilder: (BuildContext context, index) {
-            return SpaceH20();
+            return const SpaceH20();
           },
           itemBuilder: (BuildContext context, index) {
             double start = durationForEachPortfolio * index;

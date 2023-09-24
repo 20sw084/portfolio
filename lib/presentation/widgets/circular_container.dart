@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class CircularContainer extends StatelessWidget {
-  CircularContainer({
+  const CircularContainer({
+    super.key,
     this.child,
     this.width = Sizes.WIDTH_40,
     this.height = Sizes.HEIGHT_40,

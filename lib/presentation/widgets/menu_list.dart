@@ -7,7 +7,8 @@ import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class MenuList extends StatelessWidget {
-  MenuList({
+  const MenuList({
+    super.key,
     required this.menuList,
     this.selectedItemRouteName,
   });
@@ -23,43 +24,43 @@ class MenuList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         ..._buildMenuList(menuList: menuList, context: context),
-        Spacer(
+        const Spacer(
           flex: 1,
         ),
-        Socials(
+        const Socials(
           isVertical: true,
           alignment: Alignment.centerLeft,
           color: AppColors.secondaryColor,
           barColor: AppColors.secondaryColor,
           crossAxisAlignment: CrossAxisAlignment.start,
         ),
-        Spacer(
+        const Spacer(
           flex: 1,
         ),
         Text(
           StringConst.DEV_NAME,
-          style: theme.textTheme.headline4!.copyWith(
+          style: theme.textTheme.headlineMedium!.copyWith(
             color: AppColors.secondaryColor,
           ),
         ),
         Text(
           StringConst.SPECIALITY,
-          style: theme.textTheme.headline6!.copyWith(
+          style: theme.textTheme.titleLarge!.copyWith(
             color: AppColors.secondaryColor,
           ),
         ),
-        SpaceH20(),
+        const SpaceH20(),
         Row(
           children: [
             Text(
               StringConst.DESIGNED_IN,
-              style: theme.textTheme.bodyText1!.copyWith(
+              style: theme.textTheme.bodyLarge!.copyWith(
                 color: AppColors.secondaryColor,
                 fontSize: Sizes.TEXT_SIZE_10,
               ),
             ),
-            SpaceW4(),
-            Icon(
+            const SpaceW4(),
+            const Icon(
               FontAwesomeIcons.solidHeart,
               color: Colors.red,
               size: Sizes.ICON_SIZE_10,
@@ -69,8 +70,8 @@ class MenuList extends StatelessWidget {
         Wrap(
           children: [
             Text(
-              StringConst.BUILT_BY + ", " + StringConst.DESIGNED_BY,
-              style: theme.textTheme.bodyText1!.copyWith(
+              "${StringConst.BUILT_BY}, ${StringConst.DESIGNED_BY}",
+              style: theme.textTheme.bodyLarge!.copyWith(
                 color: AppColors.secondaryColor,
                 fontSize: Sizes.TEXT_SIZE_10,
               ),
@@ -103,7 +104,7 @@ class MenuList extends StatelessWidget {
               selectedItemRouteName == menuList[i].routeName ? true : false,
         ),
       );
-      menuItems.add(SpaceH4());
+      menuItems.add(const SpaceH4());
     }
     return menuItems;
   }

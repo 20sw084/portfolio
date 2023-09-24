@@ -4,7 +4,8 @@ import 'package:my_portfolio/presentation/widgets/horizontal_bar.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class PortfolioCard extends StatefulWidget {
-  PortfolioCard({
+  const PortfolioCard({
+    super.key,
     this.width = 500,
     this.height = 400,
     this.imageUrl,
@@ -71,7 +72,7 @@ class _PortfolioCardState extends State<PortfolioCard>
     ).animate(
       CurvedAnimation(
         parent: _portfolioCoverController,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeIn,
@@ -93,7 +94,7 @@ class _PortfolioCardState extends State<PortfolioCard>
     ThemeData theme = Theme.of(context);
     return InkWell(
       onTap: widget.onTap,
-      child: Container(
+      child: SizedBox(
         width: widget.width,
         height: widget.height,
         child: MouseRegion(
@@ -116,34 +117,34 @@ class _PortfolioCardState extends State<PortfolioCard>
                         color: widget.hoverColor,
                         child: Column(
                           children: [
-                            Spacer(flex: 1),
+                            const Spacer(flex: 1),
                             Text(
                               widget.title!,
                               textAlign: TextAlign.center,
                               style: widget.titleTextStyle ??
-                                  theme.textTheme.headline4!.copyWith(
+                                  theme.textTheme.headlineMedium!.copyWith(
                                     color: AppColors.secondaryColor,
                                   ),
                             ),
-                            SpaceH4(),
+                            const SpaceH4(),
                             Text(
                               widget.subtitle!,
                               textAlign: TextAlign.center,
                               style: widget.subtitleTextStyle ??
-                                  theme.textTheme.bodyText1!.copyWith(
+                                  theme.textTheme.bodyLarge!.copyWith(
                                       color: AppColors.secondaryColor,
                                       fontSize: Sizes.TEXT_SIZE_16),
                             ),
-                            SpaceH16(),
+                            const SpaceH16(),
                             Text(
                               widget.actionTitleTextStyle as String? ?? widget.actionTitle!,
                               textAlign: TextAlign.center,
-                              style: theme.textTheme.subtitle1!
+                              style: theme.textTheme.titleMedium!
                                   .copyWith(color: AppColors.secondaryColor),
                             ),
-                            SpaceH4(),
-                            HorizontalBar(color: AppColors.secondaryColor),
-                            Spacer(flex: 1),
+                            const SpaceH4(),
+                            const HorizontalBar(color: AppColors.secondaryColor),
+                            const Spacer(flex: 1),
                           ],
                         ),
                       ),

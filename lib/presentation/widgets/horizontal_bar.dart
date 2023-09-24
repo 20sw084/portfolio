@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class HorizontalBar extends StatelessWidget {
-  HorizontalBar({
+  const HorizontalBar({
+    super.key,
     this.width = Sizes.WIDTH_20,
     this.height = Sizes.HEIGHT_2,
     this.color = AppColors.accentColor2, //AppColors.secondaryColor

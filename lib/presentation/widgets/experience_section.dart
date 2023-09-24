@@ -4,7 +4,8 @@ import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class ExperienceSection extends StatelessWidget {
-  ExperienceSection({
+  const ExperienceSection({
+    super.key,
     required this.duration,
     required this.position,
     required this.company,
@@ -35,52 +36,50 @@ class ExperienceSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Container(
-      child: ListView(
-        children: [
-          Row(
-            children: [
-              Text(
-                position,
-                style: positionTextStyle ??
-                    theme.textTheme.headline6!.copyWith(
-                      color: AppColors.complimentColor2,
+    return ListView(
+      children: [
+        Row(
+          children: [
+            Text(
+              position,
+              style: positionTextStyle ??
+                  theme.textTheme.titleLarge!.copyWith(
+                    color: AppColors.complimentColor2,
+                  ),
+            ),
+            const SpaceW4(),
+            InkWell(
+              onTap: onTap ?? (() => Functions.launchUrl(companyUrl!)),
+              child: Text(
+                '@${company!}',
+                style: companyTextStyle ??
+                    theme.textTheme.titleLarge!.copyWith(
+                      color: AppColors.complimentColor1,
                     ),
               ),
-              SpaceW4(),
-              InkWell(
-                onTap: onTap ?? (() => Functions.launchUrl(companyUrl!)),
-                child: Text(
-                  '@' + company!,
-                  style: companyTextStyle ??
-                      theme.textTheme.headline6!.copyWith(
-                        color: AppColors.complimentColor1,
-                      ),
-                ),
-              )
-            ],
-          ),
-          Text(
-            location,
-            style: locationTextStyle ??
-                theme.textTheme.bodyText1!.copyWith(
-                  fontSize: Sizes.TEXT_SIZE_16,
-                  color: AppColors.accentColor,
-                ),
-          ),
-          SpaceH4(),
-          Text(
-            duration,
-            style: durationTextStyle ??
-                theme.textTheme.bodyText1!.copyWith(
-                  fontSize: Sizes.TEXT_SIZE_16,
-                  color: AppColors.accentColor,
-                ),
-          ),
-          SpaceH16(),
-          ..._buildRoles(roles),
-        ],
-      ),
+            )
+          ],
+        ),
+        Text(
+          location,
+          style: locationTextStyle ??
+              theme.textTheme.bodyLarge!.copyWith(
+                fontSize: Sizes.TEXT_SIZE_16,
+                color: AppColors.accentColor,
+              ),
+        ),
+        const SpaceH4(),
+        Text(
+          duration,
+          style: durationTextStyle ??
+              theme.textTheme.bodyLarge!.copyWith(
+                fontSize: Sizes.TEXT_SIZE_16,
+                color: AppColors.accentColor,
+              ),
+        ),
+        const SpaceH16(),
+        ..._buildRoles(roles),
+      ],
     );
   }
 
@@ -88,7 +87,7 @@ class ExperienceSection extends StatelessWidget {
     List<Widget> roleWidgets = [];
     for (var index = 0; index < roles.length; index++) {
       roleWidgets.add(Role(role: roles[index]));
-      roleWidgets.add(SpaceH8());
+      roleWidgets.add(const SpaceH8());
     }
 
     return roleWidgets;
@@ -96,7 +95,7 @@ class ExperienceSection extends StatelessWidget {
 }
 
 class Role extends StatelessWidget {
-  Role({
+  const Role({super.key,
     required this.role,
     this.roleTextStyle,
     this.icon = Icons.arrow_right,
@@ -120,12 +119,12 @@ class Role extends StatelessWidget {
           size: iconSize,
           color: color,
         ),
-        SpaceW8(),
+        const SpaceW8(),
         Expanded(
           child: Text(
             role,
             style: roleTextStyle ??
-                theme.textTheme.bodyText1!.copyWith(
+                theme.textTheme.bodyLarge!.copyWith(
                   color: AppColors.accentColor3,
                 ),
           ),

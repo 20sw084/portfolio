@@ -11,6 +11,8 @@ import 'package:my_portfolio/presentation/widgets/trailing_info.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class AboutPageDesktop extends StatefulWidget {
+  const AboutPageDesktop({super.key});
+
   @override
   _AboutPageDesktopState createState() => _AboutPageDesktopState();
 }
@@ -60,7 +62,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
         setState(() {
           _isAboutContentVisible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playFlickerAnimation();
         });
       }
@@ -71,7 +73,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
         setState(() {
           _isSubtitleVisible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playFlickerAnimation2();
         });
       }
@@ -82,7 +84,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
         setState(() {
           _visible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playAboutDevAnimation();
         });
       }
@@ -114,7 +116,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           1.0,
           curve: Curves.easeInOutCubic,
@@ -127,7 +129,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           1.0,
           curve: Curves.easeInOutCubic,
@@ -140,7 +142,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           1.0,
           curve: Curves.easeInOutCubic,
@@ -153,7 +155,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           1.0,
           curve: Curves.easeInOutCubic,
@@ -166,7 +168,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           1.0,
           curve: Curves.easeInOutCubic,
@@ -179,7 +181,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           1.0,
           curve: Curves.easeInOutCubic,
@@ -193,7 +195,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _aboutDevAnimationController,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeInOutCubic,
@@ -244,65 +246,63 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
         : assignWidth(context: context, fraction: 0.4);
     return Stack(
       children: <Widget>[
-        Container(
-          child: Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  ContentWrapper(
-                    width: assignWidth(
-                      context: context,
-                      fraction: widthOfLeftSide.value,
-                    ),
-                    color: AppColors.primaryColor,
+        Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                ContentWrapper(
+                  width: assignWidth(
+                    context: context,
+                    fraction: widthOfLeftSide.value,
+                  ),
+                  color: AppColors.primaryColor,
 //                    gradient: Gradients.primaryGradient,
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        left: Sizes.MARGIN_20,
-                        top: Sizes.MARGIN_20,
-                        bottom: Sizes.MARGIN_20,
-                      ),
-                      child: MenuList(
-                        menuList: Data.menuList,
-                        selectedItemRouteName: AboutPage.aboutPageRoute,
-                      ),
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      left: Sizes.MARGIN_20,
+                      top: Sizes.MARGIN_20,
+                      bottom: Sizes.MARGIN_20,
+                    ),
+                    child: MenuList(
+                      menuList: Data.menuList,
+                      selectedItemRouteName: AboutPage.aboutPageRoute,
                     ),
                   ),
-                  ContentWrapper(
-                    width: assignWidth(
-                        context: context, fraction: widthOfRightSide.value),
+                ),
+                ContentWrapper(
+                  width: assignWidth(
+                      context: context, fraction: widthOfRightSide.value),
 //                    color: Colors.pinkAccent,
-                    color: AppColors.secondaryColor,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: assignWidth(
-                              context: context,
-                              fraction: widthOfAboutContent.value),
-                          child: _isAboutContentVisible
-                              ? aboutPageContent()
-                              : Container(),
-                        ),
-                        SizedBox(
-                          width: assignWidth(
+                  color: AppColors.secondaryColor,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: assignWidth(
                             context: context,
-                            fraction: 0.025,
-                          ),
+                            fraction: widthOfAboutContent.value),
+                        child: _isAboutContentVisible
+                            ? aboutPageContent()
+                            : Container(),
+                      ),
+                      SizedBox(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.025,
                         ),
-                        TrailingInfo(
-                          width: assignWidth(context: context, fraction: 0.075),
-                          onTrailingWidgetPressed: () => Navigator.pushNamed(
-                            context,
-                            PortfolioPage.portfolioPageRoute,
-                          ),
+                      ),
+                      TrailingInfo(
+                        width: assignWidth(context: context, fraction: 0.075),
+                        onTrailingWidgetPressed: () => Navigator.pushNamed(
+                          context,
+                          PortfolioPage.portfolioPageRoute,
                         ),
-                      ],
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            )
+          ],
         ),
         Transform.translate(
           offset: Offset(
@@ -318,14 +318,12 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
                 ? Container(
                     width: widthOfImage,
                   )
-                : Container(
-                    child: Image.asset(
-                      ImagePath.DEV,
-                      width: widthOfImage,
-                      height: heightOfImage,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                : Image.asset(
+                  ImagePath.DEV,
+                  width: widthOfImage,
+                  height: heightOfImage,
+                  fit: BoxFit.cover,
+                ),
           ),
         ),
       ],
@@ -335,11 +333,9 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: AnimatedBuilder(
-          builder: _buildAnimation,
-          animation: _controller.view,
-        ),
+      body: AnimatedBuilder(
+        builder: _buildAnimation,
+        animation: _controller.view,
       ),
     );
   }
@@ -348,7 +344,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
     ThemeData theme = Theme.of(context);
 
     return ListView(
-      padding: EdgeInsets.all(Sizes.PADDING_0),
+      padding: const EdgeInsets.all(Sizes.PADDING_0),
       children: [
         Container(
           padding: EdgeInsets.only(
@@ -365,7 +361,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
                 textColor: AppColors.primaryColor,
                 fadeInColor: AppColors.primaryColor,
                 controller: _flickerAnimationController.view,
-                textStyle: theme.textTheme.bodyText1!.copyWith(
+                textStyle: theme.textTheme.bodyLarge!.copyWith(
                   fontSize: Sizes.TEXT_SIZE_18,
                   fontWeight: FontWeight.w400,
                   color: AppColors.accentColor2,
@@ -384,25 +380,25 @@ class _AboutPageDesktopState extends State<AboutPageDesktop>
                       textColor: AppColors.primaryColor,
                       fadeInColor: AppColors.primaryColor,
                       controller: _flickerAnimationController2.view,
-                      textStyle: theme.textTheme.subtitle1!.copyWith(
+                      textStyle: theme.textTheme.titleMedium!.copyWith(
                         fontSize: Sizes.TEXT_SIZE_34,
                         color: AppColors.accentColor2,
                       ),
                     )
                   : Container(),
-              SpaceH16(),
+              const SpaceH16(),
               AnimatedOpacity(
                 opacity: _visible ? aboutDevAnimation.value : 0.0,
                 duration: _aboutDevAnimationController.duration!,
                 child: Text(
                   StringConst.ABOUT_DEV_TEXT,
-                  style: theme.textTheme.bodyText2!.copyWith(
+                  style: theme.textTheme.bodyMedium!.copyWith(
                     color: AppColors.black,
                     fontSize: Sizes.TEXT_SIZE_16,
                   ),
                 ),
               ),
-              SpaceH40(),
+              const SpaceH40(),
               _isSubMenuListVisible
                   ? SubMenuList(
                       subMenuData: Data.subMenuData,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:my_portfolio/presentation/widgets/skill_level.dart';
 import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/presentation/widgets/sub_menu_item.dart';
@@ -7,7 +6,8 @@ import 'package:my_portfolio/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class SubMenuList extends StatefulWidget {
-  SubMenuList({
+  const SubMenuList({
+    super.key,
     required this.subMenuData,
     this.spacing = Sizes.SIZE_8,
     this.runSpacing = Sizes.SIZE_8,
@@ -40,7 +40,7 @@ class _SubMenuListState extends State<SubMenuList>
     _playAnimation();
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           setState(() {
             _isSkillsVisible = true;
           });
@@ -57,9 +57,7 @@ class _SubMenuListState extends State<SubMenuList>
   }
 
   Future<void> _playAnimation() async {
-    try {
-      await _controller.forward().orCancel;
-    } on TickerCanceled {}
+    await _controller.forward().orCancel;
   }
 
   initTweens() {
@@ -69,7 +67,7 @@ class _SubMenuListState extends State<SubMenuList>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           0.5,
           curve: Curves.easeIn,
@@ -82,7 +80,7 @@ class _SubMenuListState extends State<SubMenuList>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.5,
           1.0,
           curve: Curves.easeIn,
@@ -92,7 +90,7 @@ class _SubMenuListState extends State<SubMenuList>
   }
 
   Widget _buildAnimation(BuildContext context, Widget? child) {
-    return Container(
+    return SizedBox(
       width: widget.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,7 +106,7 @@ class _SubMenuListState extends State<SubMenuList>
               ],
             ),
           ),
-          SpaceH16(),
+          const SpaceH16(),
           _isSkillsVisible ? _buildContent(widget.subMenuData) : Container(),
         ],
       ),
@@ -139,7 +137,7 @@ class _SubMenuListState extends State<SubMenuList>
           ),
         ),
       );
-      menuList.add(SpaceW24());
+      menuList.add(const SpaceW24());
     }
     return menuList;
   }
@@ -163,7 +161,7 @@ class _SubMenuListState extends State<SubMenuList>
         } else {
           return Text(
             menuData[index].content!,
-            style: theme.textTheme.bodyText2!.copyWith(
+            style: theme.textTheme.bodyMedium!.copyWith(
               color: AppColors.black,
               fontSize: Sizes.TEXT_SIZE_16,
             ),
@@ -176,7 +174,9 @@ class _SubMenuListState extends State<SubMenuList>
 
   _onMenuChange(int index) {
     setState(() {
-      widget.subMenuData.forEach((element) => element.isSelected = false);
+      for (var element in widget.subMenuData) {
+        element.isSelected = false;
+      }
       widget.subMenuData[index].isSelected = true;
     });
   }

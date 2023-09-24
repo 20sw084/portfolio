@@ -5,7 +5,7 @@ import 'package:my_portfolio/values/values.dart';
 import 'circular_container.dart';
 
 class CustomAppBar extends StatelessWidget {
-  CustomAppBar({
+  const CustomAppBar({super.key,
     this.title,
     this.leading,
     this.onLeadingPressed,
@@ -32,7 +32,7 @@ class CustomAppBar extends StatelessWidget {
       title: Text(
         title!,
         style: titleTextStyle ??
-            theme.textTheme.headline6!.copyWith(
+            theme.textTheme.titleLarge!.copyWith(
               color: AppColors.secondaryColor,
             ),
       ),
@@ -46,7 +46,7 @@ class CustomAppBar extends StatelessWidget {
               bottom: Sizes.PADDING_8,
             ),
             onPressed: onLeadingPressed,
-            icon: Icon(
+            icon: const Icon(
               Icons.menu,
               color: AppColors.secondaryColor,
             ),
@@ -64,12 +64,6 @@ class CustomAppBar extends StatelessWidget {
                 width: Sizes.WIDTH_40,
                 height: Sizes.HEIGHT_40,
                 child: InkWell(
-                  child: actionIcon ??
-                      Icon(
-                        Icons.email,
-                        color: AppColors.accentColor2,
-                        size: Sizes.ICON_SIZE_20,
-                      ),
                   onTap: onActionsPressed ??
                       () {
                         Functions.launchUrl(StringConst.EMAIL_URL);
@@ -78,6 +72,12 @@ class CustomAppBar extends StatelessWidget {
 //                          ContactPage.contactPageRoute,
 //                        );
                       },
+                  child: actionIcon ??
+                      const Icon(
+                        Icons.email,
+                        color: AppColors.accentColor2,
+                        size: Sizes.ICON_SIZE_20,
+                      ),
                 ),
               ),
             )

@@ -1,7 +1,6 @@
 library values;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/presentation/pages/about/about_page.dart';
 import 'package:my_portfolio/presentation/pages/certification/certification_page.dart';

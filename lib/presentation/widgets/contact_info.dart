@@ -3,7 +3,8 @@ import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class ContactInfo extends StatelessWidget {
-  ContactInfo({
+  const ContactInfo({
+    super.key,
     this.contactType = StringConst.EMAIL,
     this.contact = StringConst.DEV_EMAIL,
     this.contactTypeTextStyle,
@@ -30,42 +31,40 @@ class ContactInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Container(
-      child: Column(
-        crossAxisAlignment: crossAxisAlignment,
-        children: [
-          Text(
-            contactType,
-            style: contactTypeTextStyle ??
-                theme.textTheme.headline5!.copyWith(
-                  color: AppColors.accentColor2,
-                ),
+    return Column(
+      crossAxisAlignment: crossAxisAlignment,
+      children: [
+        Text(
+          contactType,
+          style: contactTypeTextStyle ??
+              theme.textTheme.headlineSmall!.copyWith(
+                color: AppColors.accentColor2,
+              ),
+        ),
+        const SpaceH4(),
+        InkWell(
+          onTap: onTap,
+          child: Row(
+            mainAxisAlignment: iconsMainAxisAlignment,
+            children: [
+              Icon(
+                iconData,
+                color: iconColor,
+                size: iconSize,
+              ),
+              const SpaceW4(),
+              Text(
+                contact,
+                style: contactTextStyle ??
+                    theme.textTheme.bodyLarge!.copyWith(
+                      fontSize: Sizes.TEXT_SIZE_18,
+                      color: AppColors.black,
+                    ),
+              ),
+            ],
           ),
-          SpaceH4(),
-          InkWell(
-            onTap: onTap,
-            child: Row(
-              mainAxisAlignment: iconsMainAxisAlignment,
-              children: [
-                Icon(
-                  iconData,
-                  color: iconColor,
-                  size: iconSize,
-                ),
-                SpaceW4(),
-                Text(
-                  contact,
-                  style: contactTextStyle ??
-                      theme.textTheme.bodyText1!.copyWith(
-                        fontSize: Sizes.TEXT_SIZE_18,
-                        color: AppColors.black,
-                      ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:my_portfolio/presentation/widgets/horizontal_bar.dart';
 import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
@@ -7,7 +6,7 @@ import 'package:my_portfolio/values/values.dart';
 import 'flicker_text_animation.dart';
 
 class MenuItem extends StatefulWidget {
-  MenuItem({
+  const MenuItem({super.key,
     required this.title,
     this.titleStyle,
     this.onTap,
@@ -85,14 +84,14 @@ class _MenuItemState extends State<MenuItem> with TickerProviderStateMixin {
                             color: AppColors.secondaryColor,
                           )
                         : Container(),
-                    widget.selected ? SpaceW12() : Container(),
+                    widget.selected ? const SpaceW12() : Container(),
                     FlickerTextAnimation(
                       text: widget.title,
                       textColor: AppColors.secondaryColor,
                       fadeInColor: AppColors.accentColor,
                       controller: _controller.view,
                       textStyle: !widget.selected
-                          ? theme.textTheme.bodyText1!
+                          ? theme.textTheme.bodyLarge!
                               .copyWith(fontSize: Sizes.TEXT_SIZE_16)
                           : null,
                     ),
@@ -108,15 +107,15 @@ class _MenuItemState extends State<MenuItem> with TickerProviderStateMixin {
 //                      mainAxisAlignment: MainAxisAlignment.center,
                       controller: _controller.view,
                       textStyle: !widget.selected
-                          ? theme.textTheme.bodyText1!.copyWith(
+                          ? theme.textTheme.bodyLarge!.copyWith(
                               fontSize: Sizes.TEXT_SIZE_16,
                               color: AppColors.accentColor2,
                             )
                           : null,
                     ),
-                    widget.selected ? SpaceH8() : Container(),
+                    widget.selected ? const SpaceH8() : Container(),
                     widget.selected
-                        ? HorizontalBar(
+                        ? const HorizontalBar(
                             color: AppColors.primaryColor,
                           )
                         : Container(),

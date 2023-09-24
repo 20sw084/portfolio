@@ -24,7 +24,8 @@ class CustomTextFormField extends StatelessWidget {
   final InputBorder enabledBorder;
   final InputBorder focusedBorder;
 
-  CustomTextFormField({
+  const CustomTextFormField({
+    super.key,
     this.controller,
     this.onTap,
     this.textInputType = TextInputType.text,
@@ -51,31 +52,29 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Container(
-      child: TextFormField(
-        controller: controller,
-        style: textFormFieldStyle ??
-            theme.textTheme.subtitle1!.copyWith(color: AppColors.primaryColor),
-        validator: validator,
-        onTap: onTap,
-        // autovalidate: true,
-        maxLines: maxLines,
-        decoration: InputDecoration(
-          border: border,
-          enabledBorder: enabledBorder,
-          focusedBorder: focusedBorder,
-          hintText: hintText,
-          hintStyle: hintTextStyle,
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: contentPaddingHorizontal,
-            vertical: contentPaddingVertical,
-          ),
-          filled: filled,
-          fillColor: fillColor,
+    return TextFormField(
+      controller: controller,
+      style: textFormFieldStyle ??
+          theme.textTheme.titleMedium!.copyWith(color: AppColors.primaryColor),
+      validator: validator,
+      onTap: onTap,
+      // autovalidate: true,
+      maxLines: maxLines,
+      decoration: InputDecoration(
+        border: border,
+        enabledBorder: enabledBorder,
+        focusedBorder: focusedBorder,
+        hintText: hintText,
+        hintStyle: hintTextStyle,
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: contentPaddingHorizontal,
+          vertical: contentPaddingVertical,
         ),
-        keyboardType: textInputType,
-        obscureText: obscured,
+        filled: filled,
+        fillColor: fillColor,
       ),
+      keyboardType: textInputType,
+      obscureText: obscured,
     );
   }
 }

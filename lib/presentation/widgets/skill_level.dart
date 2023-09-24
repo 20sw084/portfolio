@@ -4,7 +4,8 @@ import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class SkillLevel extends StatelessWidget {
-  SkillLevel({
+  const SkillLevel({
+    super.key,
     required this.skillLevel,
     required this.skillName,
     this.width,
@@ -32,7 +33,7 @@ class SkillLevel extends StatelessWidget {
   Widget build(BuildContext context) {
     var actualSkillLevel = skillLevel / 10;
     ThemeData theme = Theme.of(context);
-    return Container(
+    return SizedBox(
       width: width,
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -40,14 +41,14 @@ class SkillLevel extends StatelessWidget {
           TweenAnimationBuilder(
             tween: Tween<double>(begin: 0, end: skillLevel),
             duration: duration,
-            child: Container(
+            child: SizedBox(
               width: circleWidth,
               height: circleHeight,
               child: Center(
                 child: Text(
                   actualSkillLevel.toString(),
                   style: textStyle ??
-                      theme.textTheme.subtitle1!.copyWith(
+                      theme.textTheme.titleMedium!.copyWith(
                         color: AppColors.accentColor2,
                       ),
                 ),
@@ -72,12 +73,12 @@ class SkillLevel extends StatelessWidget {
               );
             },
           ),
-          SpaceW8(),
+          const SpaceW8(),
           Expanded(
             child: Text(
               skillName,
               style: skillNameTextStyle ??
-                  theme.textTheme.subtitle1!.copyWith(
+                  theme.textTheme.titleMedium!.copyWith(
                     color: AppColors.accentColor2,
                   ),
             ),

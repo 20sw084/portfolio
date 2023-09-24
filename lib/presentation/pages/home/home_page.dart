@@ -16,9 +16,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ScreenTypeLayout(
-        mobile: HomePageMobile(),
-        tablet: HomePageDesktop(),
-        desktop: HomePageDesktop(),
+        mobile: const HomePageMobile(),
+        tablet: const HomePageDesktop(),
+        desktop: const HomePageDesktop(),
       ),
     );
   }

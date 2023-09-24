@@ -15,7 +15,7 @@ import 'package:my_portfolio/presentation/widgets/void.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class ProjectDetailDesktop extends StatefulWidget {
-  ProjectDetailDesktop({
+  const ProjectDetailDesktop({super.key,
     required this.projectDetails,
   });
 
@@ -58,7 +58,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
         setState(() {
           _isHeadingVisible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playFlickerAnimation();
         });
       }
@@ -68,7 +68,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
         setState(() {
           _isContentVisible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playProjectContentAnimation();
         });
       }
@@ -92,7 +92,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           0.5,
           curve: Curves.easeIn,
@@ -105,7 +105,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.5,
           1.0,
           curve: Curves.easeIn,
@@ -118,7 +118,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
     ).animate(
       CurvedAnimation(
         parent: _contentAnimationController,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeIn,
@@ -155,69 +155,67 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
   Widget _buildAnimation(BuildContext context, Widget? child) {
     return Stack(
       children: [
-        Container(
-          child: Column(
-            children: [
-              Row(
-                children: <Widget>[
-                  ContentWrapper(
-                    width: assignWidth(
-                      context: context,
-                      fraction: 0.2,
+        Column(
+          children: [
+            Row(
+              children: <Widget>[
+                ContentWrapper(
+                  width: assignWidth(
+                    context: context,
+                    fraction: 0.2,
+                  ),
+                  color: AppColors.primaryColor,
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      left: Sizes.MARGIN_20,
+                      top: Sizes.MARGIN_20,
+                      bottom: Sizes.MARGIN_20,
                     ),
-                    color: AppColors.primaryColor,
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        left: Sizes.MARGIN_20,
-                        top: Sizes.MARGIN_20,
-                        bottom: Sizes.MARGIN_20,
-                      ),
-                      child: MenuList(
-                        menuList: Data.menuList,
-                        selectedItemRouteName: PortfolioPage.portfolioPageRoute,
-                      ),
+                    child: MenuList(
+                      menuList: Data.menuList,
+                      selectedItemRouteName: PortfolioPage.portfolioPageRoute,
                     ),
                   ),
-                  ContentWrapper(
-                    width: assignWidth(
-                      context: context,
-                      fraction: 0.8,
-                    ),
-                    color: AppColors.grey100,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: assignWidth(
-                            context: context,
-                            fraction: 0.7,
-                          ),
-                          padding: EdgeInsets.symmetric(
-                            horizontal:
-                                assignWidth(context: context, fraction: 0.04),
-                            vertical:
-                                assignHeight(context: context, fraction: 0.04),
-                          ),
-                          child: _buildProjectDetailContent(),
-                        ),
-                        SizedBox(
-                          width: assignWidth(
-                            context: context,
-                            fraction: 0.025,
-                          ),
-                        ),
-                        TrailingInfo(
-                          width: assignWidth(
-                            context: context,
-                            fraction: 0.075,
-                          ),
-                        ),
-                      ],
-                    ),
+                ),
+                ContentWrapper(
+                  width: assignWidth(
+                    context: context,
+                    fraction: 0.8,
                   ),
-                ],
-              )
-            ],
-          ),
+                  color: AppColors.grey100,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.7,
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal:
+                              assignWidth(context: context, fraction: 0.04),
+                          vertical:
+                              assignHeight(context: context, fraction: 0.04),
+                        ),
+                        child: _buildProjectDetailContent(),
+                      ),
+                      SizedBox(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.025,
+                        ),
+                      ),
+                      TrailingInfo(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.075,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
       ],
     );
@@ -264,7 +262,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
                       controller: _flickerAnimationController.view,
                     )
                   : Container(),
-              SpaceH16(),
+              const SpaceH16(),
               _isContentVisible
                   ? FadeTransition(
                       opacity: _projectContentAnimation,
@@ -273,32 +271,32 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
                         children: [
                           Text(
                             widget.projectDetails!.projectDescription,
-                            style: theme.textTheme.bodyText1!.copyWith(
+                            style: theme.textTheme.bodyLarge!.copyWith(
                               color: AppColors.primaryColor,
                               fontSize: Sizes.TEXT_SIZE_16,
                             ),
                           ),
-                          SpaceH8(),
+                          const SpaceH8(),
                           Text(
                             StringConst.BUILT_WITH +
                                 widget.projectDetails!.technologyUsed!,
-                            style: theme.textTheme.headline6!.copyWith(
+                            style: theme.textTheme.titleLarge!.copyWith(
                               color: AppColors.primaryColor,
                               fontSize: Sizes.TEXT_SIZE_14,
                             ),
                           ),
-                          SpaceH8(),
+                          const SpaceH8(),
                           !widget.projectDetails!.hasBeenReleased!
                               ? Text(
                                   StringConst.COMING_SOON,
-                                  style: theme.textTheme.headline6!.copyWith(
+                                  style: theme.textTheme.titleLarge!.copyWith(
                                     color: AppColors.primaryColor,
                                     fontSize: Sizes.TEXT_SIZE_16,
                                   ),
                                 )
                               : Container(),
                           !widget.projectDetails!.hasBeenReleased!
-                              ? SpaceH8()
+                              ? const SpaceH8()
                               : Container(),
                           Wrap(
                             direction: Axis.horizontal,
@@ -314,7 +312,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
                                         );
                                       },
                                     )
-                                  : Emptiness(),
+                                  : const Emptiness(),
                               widget.projectDetails!.isOnPlayStore!
                                   ? InkWell(
                                       onTap: () {
@@ -333,7 +331,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
                                         ),
                                       ),
                                     )
-                                  : Emptiness(),
+                                  : const Emptiness(),
                               widget.projectDetails!.isLive!
                                   ? SocialButton(
                                       icon: FeatherIcons.globe,
@@ -342,7 +340,7 @@ class _ProjectDetailDesktopState extends State<ProjectDetailDesktop>
                                             widget.projectDetails!.webUrl!);
                                       },
                                     )
-                                  : Emptiness(),
+                                  : const Emptiness(),
                             ],
                           )
                         ],

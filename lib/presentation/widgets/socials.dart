@@ -5,7 +5,8 @@ import 'package:my_portfolio/presentation/widgets/horizontal_bar.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class Socials extends StatelessWidget {
-  Socials({
+  const Socials({
+    super.key,
     this.isHorizontal = false,
     this.isVertical = false,
     this.alignment,
@@ -25,60 +26,58 @@ class Socials extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isVertical
-        ? Container(
-            child: Column(
-              crossAxisAlignment: crossAxisAlignment!,
-              children: [
-                SocialButton(
-                  icon: FontAwesomeIcons.github,
-                  alignment: alignment,
-                  onPressed: () {
-                    Functions.launchUrl(StringConst.GITHUB_URL);
-                  },
-                  color: color,
-                ),
-                HorizontalBar(
-                  width: Sizes.WIDTH_32,
-                  color: barColor,
-                  margin: EdgeInsets.symmetric(vertical: Sizes.MARGIN_4),
-                ),
-                SocialButton(
-                  icon: FontAwesomeIcons.linkedin,
-                  alignment: alignment,
-                  onPressed: () {
-                    Functions.launchUrl(StringConst.LINKED_IN_URL);
-                  },
-                  color: color,
-                ),
-                HorizontalBar(
-                  width: Sizes.WIDTH_32,
-                  color: barColor,
-                  margin: EdgeInsets.symmetric(vertical: Sizes.MARGIN_4),
-                ),
-                SocialButton(
-                  icon: FontAwesomeIcons.twitter,
-                  alignment: alignment,
-                  onPressed: () {
-                    Functions.launchUrl(StringConst.TWITTER_URL);
-                  },
-                  color: color,
-                ),
-                HorizontalBar(
-                  width: Sizes.WIDTH_32,
-                  color: barColor,
-                  margin: EdgeInsets.symmetric(vertical: Sizes.MARGIN_4),
-                ),
-                SocialButton(
-                  icon: FontAwesomeIcons.facebook,
-                  alignment: alignment,
-                  onPressed: () {
-                    Functions.launchUrl(StringConst.FACEBOOK_URL);
-                  },
-                  color: color,
-                ),
-              ],
+        ? Column(
+          crossAxisAlignment: crossAxisAlignment!,
+          children: [
+            SocialButton(
+              icon: FontAwesomeIcons.github,
+              alignment: alignment,
+              onPressed: () {
+                Functions.launchUrl(StringConst.GITHUB_URL);
+              },
+              color: color,
             ),
-          )
+            HorizontalBar(
+              width: Sizes.WIDTH_32,
+              color: barColor,
+              margin: const EdgeInsets.symmetric(vertical: Sizes.MARGIN_4),
+            ),
+            SocialButton(
+              icon: FontAwesomeIcons.linkedin,
+              alignment: alignment,
+              onPressed: () {
+                Functions.launchUrl(StringConst.LINKED_IN_URL);
+              },
+              color: color,
+            ),
+            HorizontalBar(
+              width: Sizes.WIDTH_32,
+              color: barColor,
+              margin: const EdgeInsets.symmetric(vertical: Sizes.MARGIN_4),
+            ),
+            SocialButton(
+              icon: FontAwesomeIcons.twitter,
+              alignment: alignment,
+              onPressed: () {
+                Functions.launchUrl(StringConst.TWITTER_URL);
+              },
+              color: color,
+            ),
+            HorizontalBar(
+              width: Sizes.WIDTH_32,
+              color: barColor,
+              margin: const EdgeInsets.symmetric(vertical: Sizes.MARGIN_4),
+            ),
+            SocialButton(
+              icon: FontAwesomeIcons.facebook,
+              alignment: alignment,
+              onPressed: () {
+                Functions.launchUrl(StringConst.FACEBOOK_URL);
+              },
+              color: color,
+            ),
+          ],
+        )
         : IntrinsicHeight(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -137,7 +136,8 @@ class Socials extends StatelessWidget {
 }
 
 class SocialButton extends StatelessWidget {
-  SocialButton({
+  const SocialButton({
+    super.key,
     this.padding = const EdgeInsets.all(Sizes.PADDING_0),
     this.onPressed,
     this.color = AppColors.accentColor2,

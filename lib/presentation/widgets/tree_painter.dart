@@ -24,7 +24,7 @@ class TreePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint _paint = Paint()
+    Paint paint = Paint()
       ..strokeWidth = veinsStrokeWidth
       ..color = veinsColor
       ..strokeCap = StrokeCap.round
@@ -39,15 +39,15 @@ class TreePainter extends CustomPainter {
         Offset(size.width * (0.5 + ((stalk / 2))), size.height * 0.5);
 
     //draws vertical line
-    canvas.drawLine(verticalLineStartingPoint, verticalLineEndPoint, _paint);
+    canvas.drawLine(verticalLineStartingPoint, verticalLineEndPoint, paint);
     //draws horizontal line
     canvas.drawLine(
       horizontalLineStartingPoint,
       horizontalLineEndPoint,
-      _paint,
+      paint,
     );
 
-    Paint _circlePaint = Paint()
+    Paint circlePaint = Paint()
       ..strokeWidth = jointsStrokeWidth
       ..color = outerJointColor
       ..style = PaintingStyle.fill
@@ -55,10 +55,10 @@ class TreePainter extends CustomPainter {
 
     Offset center = Offset(size.width / 2, size.height / 2);
 
-    canvas.drawCircle(center, outerJointRadius, _circlePaint);
+    canvas.drawCircle(center, outerJointRadius, circlePaint);
 
-    _circlePaint..color = innerJointColor;
-    canvas.drawCircle(center, innerJointRadius, _circlePaint);
+    circlePaint.color = innerJointColor;
+    canvas.drawCircle(center, innerJointRadius, circlePaint);
   }
 
   @override

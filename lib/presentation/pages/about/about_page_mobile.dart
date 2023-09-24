@@ -10,6 +10,8 @@ import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class AboutPageMobile extends StatefulWidget {
+  const AboutPageMobile({super.key});
+
   @override
   _AboutPageMobileState createState() => _AboutPageMobileState();
 }
@@ -38,7 +40,7 @@ class _AboutPageMobileState extends State<AboutPageMobile>
       duration: const Duration(milliseconds: 1000),
       vsync: this,
     );
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _playFlickerAnimation();
     });
     initializeTweens();
@@ -47,7 +49,7 @@ class _AboutPageMobileState extends State<AboutPageMobile>
         setState(() {
           _isPunchLineVisible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playFlickerAnimation2();
         });
       }
@@ -58,7 +60,7 @@ class _AboutPageMobileState extends State<AboutPageMobile>
         setState(() {
           _isContentVisible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playAnimation();
         });
       }
@@ -74,7 +76,7 @@ class _AboutPageMobileState extends State<AboutPageMobile>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeInOutCubic,
@@ -124,7 +126,7 @@ class _AboutPageMobileState extends State<AboutPageMobile>
       key: _scaffoldKey,
       extendBody: true,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56.0),
+        preferredSize: const Size.fromHeight(56.0),
         child: CustomAppBar(
           title: StringConst.ABOUT_ME,
           onLeadingPressed: () {
@@ -144,7 +146,7 @@ class _AboutPageMobileState extends State<AboutPageMobile>
         children: [
           ContentWrapper(
             child: ListView(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 top: Sizes.PADDING_24,
                 left: Sizes.PADDING_24,
               ),
@@ -154,7 +156,7 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                   textColor: AppColors.primaryColor,
                   fadeInColor: AppColors.primaryColor,
                   controller: _flickerAnimationController.view,
-                  textStyle: theme.textTheme.bodyText1!.copyWith(
+                  textStyle: theme.textTheme.bodyLarge!.copyWith(
                     fontSize: Sizes.TEXT_SIZE_16,
                     fontWeight: FontWeight.w400,
                     color: AppColors.accentColor2,
@@ -173,19 +175,19 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                         textColor: AppColors.primaryColor,
                         fadeInColor: AppColors.primaryColor,
                         controller: _flickerAnimationController2.view,
-                        textStyle: theme.textTheme.subtitle1!.copyWith(
+                        textStyle: theme.textTheme.titleMedium!.copyWith(
                           fontSize: Sizes.TEXT_SIZE_24,
                           color: AppColors.primaryColor,
                         ),
                       )
                     : Container(),
-                SpaceH16(),
+                const SpaceH16(),
                 _isContentVisible ? _fadeInContent() : Container(),
               ],
             ),
           ),
           _isContentVisible ? _fadeInImage() : Container(),
-          BottomDraggableScrollableSheet(),
+          const       BottomDraggableScrollableSheet(),
         ],
       ),
     );
@@ -219,14 +221,14 @@ class _AboutPageMobileState extends State<AboutPageMobile>
       animation: _controller,
       child: Text(
         StringConst.ABOUT_DEV_TEXT,
-        style: theme.textTheme.bodyText1!.copyWith(color: AppColors.bodyText1),
+        style: theme.textTheme.bodyLarge!.copyWith(color: AppColors.bodyText1),
       ),
       builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: opacityAnimation,
           child: Row(
             children: [
-              Container(
+              SizedBox(
                 width: assignWidth(context: context, fraction: 0.4),
                 child: child,
               ),

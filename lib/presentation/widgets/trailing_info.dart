@@ -4,7 +4,8 @@ import 'package:my_portfolio/presentation/widgets/circular_container.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class TrailingInfo extends StatelessWidget {
-  TrailingInfo({
+  const TrailingInfo({
+    super.key,
     this.leadingWidget,
     this.middleWidget,
     this.trailingWidget,
@@ -36,7 +37,7 @@ class TrailingInfo extends StatelessWidget {
     return Container(
       width: width,
       padding: padding ??
-          EdgeInsets.only(
+          const EdgeInsets.only(
             top: Sizes.PADDING_30,
             right: Sizes.PADDING_30,
             bottom: Sizes.PADDING_20,
@@ -51,7 +52,7 @@ class TrailingInfo extends StatelessWidget {
                   Functions.launchUrl(StringConst.EMAIL_URL);
                 },
             child: leadingWidget ??
-                CircularContainer(
+                const CircularContainer(
                   width: Sizes.WIDTH_30,
                   height: Sizes.HEIGHT_30,
                   color: AppColors.primaryColor,
@@ -62,24 +63,24 @@ class TrailingInfo extends StatelessWidget {
                   ),
                 ),
           ),
-          spacingWidget ?? Spacer(flex: 1),
+          spacingWidget ?? const Spacer(flex: 1),
           middleWidget ??
               RotatedBox(
                 quarterTurns: 1,
                 child: Text(
                   info,
                   textAlign: TextAlign.end,
-                  style: theme.textTheme.bodyText1!.copyWith(
+                  style: theme.textTheme.bodyLarge!.copyWith(
                     color: AppColors.black,
                     fontWeight: FontWeight.w200,
                   ),
                 ),
               ),
-          spacingWidget ?? Spacer(flex: 1),
+          spacingWidget ?? const Spacer(flex: 1),
           InkWell(
             onTap: onTrailingWidgetPressed,
             child: trailingWidget ??
-                CircularContainer(
+                const CircularContainer(
                   color: AppColors.primaryColor,
                   width: Sizes.WIDTH_30,
                   height: Sizes.HEIGHT_30,

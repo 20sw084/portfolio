@@ -16,9 +16,9 @@ class CertificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ScreenTypeLayout(
-        mobile: CertificationPageMobile(),
-        tablet: CertificationPageDesktop(),
-        desktop: CertificationPageDesktop(),
+        mobile: const CertificationPageMobile(),
+        tablet: const CertificationPageDesktop(),
+        desktop: const CertificationPageDesktop(),
       ),
     );
   }

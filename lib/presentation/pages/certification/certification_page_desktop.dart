@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/layout/adaptive.dart';
-import 'package:my_portfolio/core/utils/functions.dart';
 import 'package:my_portfolio/presentation/pages/certification/certification_page.dart';
 import 'package:my_portfolio/presentation/widgets/content_wrapper.dart';
 import 'package:my_portfolio/presentation/widgets/customer_scroller.dart';
 import 'package:my_portfolio/presentation/widgets/menu_list.dart';
-import 'package:my_portfolio/presentation/widgets/portfolio_card.dart';
 import 'package:my_portfolio/presentation/widgets/trailing_info.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class CertificationPageDesktop extends StatefulWidget {
+  const CertificationPageDesktop({super.key});
+
   @override
   _CertificationPageDesktopState createState() =>
       _CertificationPageDesktopState();
@@ -18,7 +18,7 @@ class CertificationPageDesktop extends StatefulWidget {
 class _CertificationPageDesktopState extends State<CertificationPageDesktop>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -34,80 +34,78 @@ class _CertificationPageDesktopState extends State<CertificationPageDesktop>
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Container(
-          child: Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  ContentWrapper(
-                    width: assignWidth(
-                      context: context,
-                      fraction: 0.2,
+        Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                ContentWrapper(
+                  width: assignWidth(
+                    context: context,
+                    fraction: 0.2,
+                  ),
+                  color: AppColors.primaryColor,
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      left: Sizes.MARGIN_20,
+                      top: Sizes.MARGIN_20,
+                      bottom: Sizes.MARGIN_20,
                     ),
-                    color: AppColors.primaryColor,
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        left: Sizes.MARGIN_20,
-                        top: Sizes.MARGIN_20,
-                        bottom: Sizes.MARGIN_20,
-                      ),
-                      child: MenuList(
-                        menuList: Data.menuList,
-                        selectedItemRouteName:
-                            CertificationPage.certificationPageRoute,
-                      ),
+                    child: MenuList(
+                      menuList: Data.menuList,
+                      selectedItemRouteName:
+                          CertificationPage.certificationPageRoute,
                     ),
                   ),
-                  ContentWrapper(
-                    width: assignWidth(
-                      context: context,
-                      fraction: 0.8,
-                    ),
-                    color: AppColors.grey100,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: assignWidth(
-                            context: context,
-                            fraction: 0.7,
-                          ),
-                          padding: EdgeInsets.symmetric(
-                            horizontal:
-                                assignWidth(context: context, fraction: 0.04),
-                            vertical:
-                                assignHeight(context: context, fraction: 0.04),
-                          ),
-                          child: _buildAnimation(),
-                        ),
-                        SizedBox(
-                          width: assignWidth(
-                            context: context,
-                            fraction: 0.025,
-                          ),
-                        ),
-                        TrailingInfo(
-                          width: assignWidth(
-                            context: context,
-                            fraction: 0.075,
-                          ),
-                          trailingWidget: CustomScroller(
-                            onUpTap: () {
-                              _scroll(
-                                  _scrollController.position.minScrollExtent);
-                            },
-                            onDownTap: () {
-                              _scroll(
-                                  _scrollController.position.maxScrollExtent);
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
+                ),
+                ContentWrapper(
+                  width: assignWidth(
+                    context: context,
+                    fraction: 0.8,
                   ),
-                ],
-              )
-            ],
-          ),
+                  color: AppColors.grey100,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.7,
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal:
+                              assignWidth(context: context, fraction: 0.04),
+                          vertical:
+                              assignHeight(context: context, fraction: 0.04),
+                        ),
+                        child: _buildAnimation(),
+                      ),
+                      SizedBox(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.025,
+                        ),
+                      ),
+                      TrailingInfo(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.075,
+                        ),
+                        trailingWidget: CustomScroller(
+                          onUpTap: () {
+                            _scroll(
+                                _scrollController.position.minScrollExtent);
+                          },
+                          onDownTap: () {
+                            _scroll(
+                                _scrollController.position.maxScrollExtent);
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
       ],
     );
@@ -162,7 +160,7 @@ class _CertificationPageDesktopState extends State<CertificationPageDesktop>
               ),
             ),
           ),
-          child: Container(
+          child: SizedBox(
             width: isDisplaySmallDesktopOrIpadPro(context)
                 ? assignWidth(
               context: context,
@@ -220,7 +218,7 @@ class _CertificationPageDesktopState extends State<CertificationPageDesktop>
   _scroll(double offset) {
     _scrollController.animateTo(
       offset,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeIn,
     );
   }

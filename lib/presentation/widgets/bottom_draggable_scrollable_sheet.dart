@@ -7,7 +7,8 @@ import 'package:my_portfolio/values/values.dart';
 import 'horizontal_bar.dart';
 
 class BottomDraggableScrollableSheet extends StatefulWidget {
-  BottomDraggableScrollableSheet({
+  const BottomDraggableScrollableSheet({
+    super.key,
     this.initialChildSize = 0.08,
     this.maxChildSize = 0.6,
     this.minChildSize = 0.08,
@@ -33,10 +34,10 @@ class _BottomDraggableScrollableSheetState
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle selectedItem = theme.textTheme.bodyText1!.copyWith(
+    TextStyle selectedItem = theme.textTheme.bodyLarge!.copyWith(
       color: AppColors.secondaryColor,
     );
-    TextStyle unselectedItem = theme.textTheme.bodyText1!.copyWith(
+    TextStyle unselectedItem = theme.textTheme.bodyLarge!.copyWith(
       color: AppColors.deepBlue200,
     );
     return DraggableScrollableSheet(
@@ -53,14 +54,14 @@ class _BottomDraggableScrollableSheetState
             controller: scrollController,
             child: Column(
               children: [
-                SpaceH8(),
-                HorizontalBar(
+                const SpaceH8(),
+                const HorizontalBar(
                   color: AppColors.secondaryColor,
                   margin: EdgeInsets.only(right: 8),
                   width: 40,
                   height: 2,
                 ),
-                SpaceH8(),
+                const SpaceH8(),
                 IntrinsicHeight(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +75,7 @@ class _BottomDraggableScrollableSheetState
                               : unselectedItem,
                         ),
                       ),
-                      VerticalDivider(
+                      const VerticalDivider(
                         thickness: 1,
                         width: 24,
                         color: AppColors.secondaryColor,
@@ -92,7 +93,7 @@ class _BottomDraggableScrollableSheetState
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: Sizes.PADDING_16,
                     vertical: Sizes.PADDING_16,
                   ),
@@ -104,7 +105,7 @@ class _BottomDraggableScrollableSheetState
                       isEducationSelected
                           ? Text(
                               StringConst.ABOUT_DEV_TEXT,
-                              style: theme.textTheme.bodyText2!.copyWith(
+                              style: theme.textTheme.bodyMedium!.copyWith(
                                 color: AppColors.secondaryColor,
                                 fontSize: Sizes.TEXT_SIZE_16,
                               ),
@@ -139,9 +140,9 @@ class _BottomDraggableScrollableSheetState
           skillName: skills[index].skillName,
           progressColor: AppColors.secondaryColor,
           baseColor: AppColors.deepBlue200,
-          textStyle: theme.textTheme.bodyText1!
+          textStyle: theme.textTheme.bodyLarge!
               .copyWith(color: AppColors.secondaryColor),
-          skillNameTextStyle: theme.textTheme.bodyText1!
+          skillNameTextStyle: theme.textTheme.bodyLarge!
               .copyWith(color: AppColors.secondaryColor),
         ),
       );

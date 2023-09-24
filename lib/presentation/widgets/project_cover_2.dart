@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProjectCover2 extends StatelessWidget {
-  ProjectCover2(
-      {this.width,
+  const ProjectCover2(
+      {super.key, this.width,
       this.height,
       this.offset,
       this.projectCoverUrl,
@@ -24,7 +24,7 @@ class ProjectCover2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       height: height,
       child: Stack(
@@ -48,7 +48,7 @@ class ProjectCover2 extends StatelessWidget {
             bottom: offset,
             child: Transform.scale(
               scale: projectCoverScale,
-              origin: Offset(0, 0),
+              origin: const Offset(0, 0),
               alignment: alignment,
               child: Image.asset(
                 projectCoverUrl!,

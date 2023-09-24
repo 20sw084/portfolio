@@ -10,7 +10,8 @@ import 'package:my_portfolio/values/values.dart';
 import 'menu_item.dart';
 
 class AppDrawer extends StatelessWidget {
-  AppDrawer({
+  const AppDrawer({
+    super.key,
     required this.menuList,
     this.color = AppColors.secondaryColor,
     this.width,
@@ -39,7 +40,7 @@ class AppDrawer extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(Sizes.PADDING_16),
+              padding: const EdgeInsets.all(Sizes.PADDING_16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -48,7 +49,7 @@ class AppDrawer extends StatelessWidget {
                         () {
                           Navigator.pop(context);
                         },
-                    child: CircularContainer(
+                    child: const CircularContainer(
                       color: AppColors.accentColor2,
                       width: Sizes.WIDTH_30,
                       height: Sizes.HEIGHT_30,
@@ -62,34 +63,34 @@ class AppDrawer extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(flex: 1),
+            const Spacer(flex: 1),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ..._buildMenuList(menuList: menuList, context: context),
               ],
             ),
-            Spacer(flex: 1),
-            Socials(
+            const Spacer(flex: 1),
+            const Socials(
               isHorizontal: true,
               color: AppColors.accentColor2,
               alignment: Alignment.center,
               barColor: AppColors.accentColor2,
               crossAxisAlignment: CrossAxisAlignment.center,
             ),
-            SpaceH16(),
+            const SpaceH16(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   StringConst.DESIGNED_IN,
-                  style: theme.textTheme.bodyText1!.copyWith(
+                  style: theme.textTheme.bodyLarge!.copyWith(
                     color: AppColors.accentColor2,
                     fontSize: Sizes.TEXT_SIZE_10,
                   ),
                 ),
-                SpaceW4(),
-                Icon(
+                const SpaceW4(),
+                const Icon(
                   FontAwesomeIcons.solidHeart,
                   color: Colors.red,
                   size: Sizes.ICON_SIZE_10,
@@ -100,15 +101,15 @@ class AppDrawer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  StringConst.BUILT_BY + ", " + StringConst.DESIGNED_BY,
-                  style: theme.textTheme.bodyText1!.copyWith(
+                  "${StringConst.BUILT_BY}, ${StringConst.DESIGNED_BY}",
+                  style: theme.textTheme.bodyLarge!.copyWith(
                     color: AppColors.accentColor2,
                     fontSize: Sizes.TEXT_SIZE_10,
                   ),
                 ),
               ],
             ),
-            SpaceH16(),
+            const SpaceH16(),
           ],
         ),
       ),
@@ -138,7 +139,7 @@ class AppDrawer extends StatelessWidget {
               selectedItemRouteName == menuList[i].routeName ? true : false,
         ),
       );
-      menuItems.add(SpaceH16());
+      menuItems.add(const SpaceH16());
     }
     return menuItems;
   }

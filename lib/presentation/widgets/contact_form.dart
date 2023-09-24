@@ -6,7 +6,8 @@ import 'circular_container.dart';
 import 'custom_text_form_field.dart';
 
 class ContactForm extends StatelessWidget {
-  ContactForm({
+  const ContactForm({
+    super.key,
     this.padding,
     this.maxLines = 12,
     this.controllers,
@@ -28,7 +29,7 @@ class ContactForm extends StatelessWidget {
             hintText: StringConst.NAME_HINT_TEXT,
             controller: controllers![0],
           ),
-          SpaceH16(),
+          const SpaceH16(),
           CustomTextFormField(
             filled: true,
             fillColor: AppColors.grey100,
@@ -36,7 +37,7 @@ class ContactForm extends StatelessWidget {
             textInputType: TextInputType.phone,
             controller: controllers![1],
           ),
-          SpaceH16(),
+          const SpaceH16(),
           CustomTextFormField(
             filled: true,
             fillColor: AppColors.grey100,
@@ -44,7 +45,7 @@ class ContactForm extends StatelessWidget {
             textInputType: TextInputType.emailAddress,
             controller: controllers![2],
           ),
-          SpaceH16(),
+          const SpaceH16(),
           CustomTextFormField(
             filled: true,
             fillColor: AppColors.grey100,
@@ -59,7 +60,7 @@ class ContactForm extends StatelessWidget {
 }
 
 class SendMessageButton extends StatelessWidget {
-  SendMessageButton({
+  const SendMessageButton({super.key,
     this.message = StringConst.SEND_MESSAGE,
     this.onPressed,
   });
@@ -77,10 +78,10 @@ class SendMessageButton extends StatelessWidget {
         children: [
           Text(
             message,
-            style: theme.textTheme.headline6!.copyWith(color: AppColors.grey100),
+            style: theme.textTheme.titleLarge!.copyWith(color: AppColors.grey100),
           ),
-          SpaceW12(),
-          CircularContainer(
+          const SpaceW12(),
+          const CircularContainer(
             child: Icon(
               Icons.send,
               color: AppColors.secondaryColor,

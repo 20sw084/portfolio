@@ -3,7 +3,8 @@ import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class CustomScroller extends StatelessWidget {
-  CustomScroller({
+  const CustomScroller({
+    super.key,
     this.width = Sizes.WIDTH_24,
     this.height = Sizes.HEIGHT_70,
     this.padding = const EdgeInsets.all(Sizes.PADDING_0),
@@ -44,10 +45,10 @@ class CustomScroller extends StatelessWidget {
               InkWell(
                 onTap: onUpTap,
                 child: topController ??
-                    Icon(Icons.keyboard_arrow_up,
+                    const Icon(Icons.keyboard_arrow_up,
                         color: AppColors.secondaryColor),
               ),
-              SpaceH8(),
+              const SpaceH8(),
               centerChild ??
                   ClipRRect(
                     borderRadius: BorderRadius.circular(4),
@@ -57,11 +58,11 @@ class CustomScroller extends StatelessWidget {
                       color: scrollCenterColor,
                     ),
                   ),
-              SpaceH8(),
+              const SpaceH8(),
               InkWell(
                 onTap: onDownTap,
                 child: bottomController ??
-                    Icon(
+                    const Icon(
                       Icons.keyboard_arrow_down,
                       color: AppColors.secondaryColor,
                     ),

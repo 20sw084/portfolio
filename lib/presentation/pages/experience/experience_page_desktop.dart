@@ -9,87 +9,87 @@ import 'package:my_portfolio/presentation/widgets/trailing_info.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class ExperiencePageDesktop extends StatefulWidget {
+  const ExperiencePageDesktop({super.key});
+
   @override
   _ExperiencePageDesktopState createState() => _ExperiencePageDesktopState();
 }
 
 class _ExperiencePageDesktopState extends State<ExperiencePageDesktop> {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              ContentWrapper(
-                width: assignWidth(
-                  context: context,
-                  fraction: 0.2,
-                ),
-                color: AppColors.primaryColor,
+    return Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            ContentWrapper(
+              width: assignWidth(
+                context: context,
+                fraction: 0.2,
+              ),
+              color: AppColors.primaryColor,
 //                gradient: Gradients.primaryGradient,
-                child: Container(
-                  margin: EdgeInsets.only(
-                    left: Sizes.MARGIN_20,
-                    top: Sizes.MARGIN_20,
-                    bottom: Sizes.MARGIN_20,
-                  ),
-                  child: MenuList(
-                    menuList: Data.menuList,
-                    selectedItemRouteName: ExperiencePage.experiencePageRoute,
-                  ),
+              child: Container(
+                margin: const EdgeInsets.only(
+                  left: Sizes.MARGIN_20,
+                  top: Sizes.MARGIN_20,
+                  bottom: Sizes.MARGIN_20,
+                ),
+                child: MenuList(
+                  menuList: Data.menuList,
+                  selectedItemRouteName: ExperiencePage.experiencePageRoute,
                 ),
               ),
-              ContentWrapper(
-                width: assignWidth(
-                  context: context,
-                  fraction: 0.8,
-                ),
-                color: AppColors.secondaryColor,
-                child: Row(
-                  children: [
-                    Container(
-                      width: assignWidth(
-                        context: context,
-                        fraction: 0.7,
-                      ),
-                      padding: EdgeInsets.symmetric(
-                        horizontal:
-                            assignWidth(context: context, fraction: 0.04),
-                        vertical:
-                            assignHeight(context: context, fraction: 0.04),
-                      ),
-                      child: _buildExperience(),
-                    ),
-                    SizedBox(
-                      width: assignWidth(
-                        context: context,
-                        fraction: 0.025,
-                      ),
-                    ),
-                    TrailingInfo(
-                      width: assignWidth(
-                        context: context,
-                        fraction: 0.075,
-                      ),
-                      trailingWidget: CustomScroller(
-                        onUpTap: () {
-                          _scroll(_scrollController.position.minScrollExtent);
-                        },
-                        onDownTap: () {
-                          _scroll(_scrollController.position.maxScrollExtent);
-                        },
-                      ),
-                    ),
-                  ],
-                ),
+            ),
+            ContentWrapper(
+              width: assignWidth(
+                context: context,
+                fraction: 0.8,
               ),
-            ],
-          )
-        ],
-      ),
+              color: AppColors.secondaryColor,
+              child: Row(
+                children: [
+                  Container(
+                    width: assignWidth(
+                      context: context,
+                      fraction: 0.7,
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal:
+                          assignWidth(context: context, fraction: 0.04),
+                      vertical:
+                          assignHeight(context: context, fraction: 0.04),
+                    ),
+                    child: _buildExperience(),
+                  ),
+                  SizedBox(
+                    width: assignWidth(
+                      context: context,
+                      fraction: 0.025,
+                    ),
+                  ),
+                  TrailingInfo(
+                    width: assignWidth(
+                      context: context,
+                      fraction: 0.075,
+                    ),
+                    trailingWidget: CustomScroller(
+                      onUpTap: () {
+                        _scroll(_scrollController.position.minScrollExtent);
+                      },
+                      onDownTap: () {
+                        _scroll(_scrollController.position.maxScrollExtent);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        )
+      ],
     );
   }
 
@@ -106,7 +106,7 @@ class _ExperiencePageDesktopState extends State<ExperiencePageDesktop> {
   _scroll(double offset) {
     _scrollController.animateTo(
       offset,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeIn,
     );
   }

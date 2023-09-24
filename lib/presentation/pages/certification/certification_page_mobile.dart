@@ -9,6 +9,8 @@ import 'package:my_portfolio/presentation/widgets/spaces.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class CertificationPageMobile extends StatefulWidget {
+  const CertificationPageMobile({super.key});
+
   @override
   _CertificationPageMobileState createState() =>
       _CertificationPageMobileState();
@@ -48,7 +50,7 @@ class _CertificationPageMobileState extends State<CertificationPageMobile>
     return Scaffold(
       key: _scaffoldKey,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56.0),
+        preferredSize: const Size.fromHeight(56.0),
         child: CustomAppBar(
           title: StringConst.CERTIFICATIONS,
           onLeadingPressed: () {
@@ -72,7 +74,7 @@ class _CertificationPageMobileState extends State<CertificationPageMobile>
           ),
           itemCount: Data.certificationData.length,
           separatorBuilder: (BuildContext context, index) {
-            return SpaceH20();
+            return const SpaceH20();
           },
           itemBuilder: (BuildContext context, index) {
             // TODO: WFH to this commented mine code

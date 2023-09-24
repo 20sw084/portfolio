@@ -15,7 +15,7 @@ import 'package:my_portfolio/presentation/widgets/void.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class ProjectDetailMobile extends StatefulWidget {
-  ProjectDetailMobile({
+  const ProjectDetailMobile({super.key,
     required this.projectDetails,
   });
 
@@ -58,7 +58,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
         setState(() {
           _isHeadingVisible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playFlickerAnimation();
         });
       }
@@ -68,7 +68,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
         setState(() {
           _isContentVisible = true;
         });
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _playProjectContentAnimation();
         });
       }
@@ -84,7 +84,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           0.5,
           curve: Curves.easeIn,
@@ -97,7 +97,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.5,
           1.0,
           curve: Curves.easeIn,
@@ -110,7 +110,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
     ).animate(
       CurvedAnimation(
         parent: _contentAnimationController,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeIn,
@@ -157,10 +157,10 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
     return Scaffold(
       key: _scaffoldKey,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56.0),
+        preferredSize: const Size.fromHeight(56.0),
         child: CustomAppBar(
           title: widget.projectDetails!.projectName,
-          actionIcon: Icon(
+          actionIcon: const Icon(
             Icons.arrow_back_ios,
             color: AppColors.accentColor2,
             size: Sizes.ICON_SIZE_20,
@@ -204,7 +204,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
           projectCoverBackgroundColor: AppColors.primaryColor,
           projectCoverUrl: widget.projectDetails!.projectImage,
         ),
-        SpaceH12(),
+        const SpaceH12(),
         _isHeadingVisible
             ? FlickerTextAnimation(
                 text: widget.projectDetails!.projectName,
@@ -214,7 +214,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
                 controller: _flickerAnimationController.view,
               )
             : Container(),
-        SpaceH16(),
+        const SpaceH16(),
         _isContentVisible
             ? FadeTransition(
                 opacity: _projectContentAnimation,
@@ -223,32 +223,32 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
                   children: [
                     Text(
                       widget.projectDetails!.projectDescription,
-                      style: theme.textTheme.bodyText1!.copyWith(
+                      style: theme.textTheme.bodyLarge!.copyWith(
                         color: AppColors.primaryColor,
                         fontSize: Sizes.TEXT_SIZE_16,
                       ),
                     ),
-                    SpaceH8(),
+                    const SpaceH8(),
                     Text(
                       StringConst.BUILT_WITH +
                           widget.projectDetails!.technologyUsed!,
-                      style: theme.textTheme.headline6!.copyWith(
+                      style: theme.textTheme.titleLarge!.copyWith(
                         color: AppColors.primaryColor,
                         fontSize: Sizes.TEXT_SIZE_14,
                       ),
                     ),
-                    SpaceH8(),
+                    const SpaceH8(),
                     !widget.projectDetails!.hasBeenReleased!
                         ? Text(
                             StringConst.COMING_SOON,
-                            style: theme.textTheme.headline6!.copyWith(
+                            style: theme.textTheme.titleLarge!.copyWith(
                               color: AppColors.primaryColor,
                               fontSize: Sizes.TEXT_SIZE_16,
                             ),
                           )
                         : Container(),
                     !widget.projectDetails!.hasBeenReleased!
-                        ? SpaceH8()
+                        ? const SpaceH8()
                         : Container(),
                     Wrap(
                       spacing: 8,
@@ -262,7 +262,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
                                       widget.projectDetails!.gitHubUrl!);
                                 },
                               )
-                            : Emptiness(),
+                            : const Emptiness(),
                         widget.projectDetails!.isOnPlayStore!
                             ? InkWell(
                                 onTap: () {
@@ -280,7 +280,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
                                   ),
                                 ),
                               )
-                            : Emptiness(),
+                            : const Emptiness(),
                         widget.projectDetails!.isLive!
                             ? SocialButton(
                                 //web
@@ -291,7 +291,7 @@ class _ProjectDetailMobileState extends State<ProjectDetailMobile>
                                   );
                                 },
                               )
-                            : Emptiness(),
+                            : const Emptiness(),
                       ],
                     ),
                   ],

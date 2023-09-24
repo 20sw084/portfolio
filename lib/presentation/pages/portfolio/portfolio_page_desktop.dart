@@ -11,13 +11,15 @@ import 'package:my_portfolio/presentation/widgets/trailing_info.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class PortfolioPageDesktop extends StatefulWidget {
+  const PortfolioPageDesktop({super.key});
+
   @override
   _PortfolioPageDesktopState createState() => _PortfolioPageDesktopState();
 }
 
 class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
     with TickerProviderStateMixin {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   late AnimationController _controller;
   late AnimationController _portfolioController;
   late Animation<double> widthOfRightContentWrapperAnimation;
@@ -68,7 +70,7 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeIn,
@@ -81,7 +83,7 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeInOutSine,
@@ -94,7 +96,7 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeIn,
@@ -107,7 +109,7 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeIn,
@@ -137,81 +139,79 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
 //    double heightOfImage = assignHeight(context: context, fraction: 1);
     return Stack(
       children: <Widget>[
-        Container(
-          child: Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  ContentWrapper(
-                    width: assignWidth(
-                      context: context,
-                      fraction: widthOfLeftContentWrapperAnimation.value,
-                    ),
-                    color: AppColors.primaryColor,
+        Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                ContentWrapper(
+                  width: assignWidth(
+                    context: context,
+                    fraction: widthOfLeftContentWrapperAnimation.value,
+                  ),
+                  color: AppColors.primaryColor,
 //                    gradient: Gradients.primaryGradient,
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        left: Sizes.MARGIN_20,
-                        top: Sizes.MARGIN_20,
-                        bottom: Sizes.MARGIN_20,
-                      ),
-                      child: MenuList(
-                        menuList: Data.menuList,
-                        selectedItemRouteName: PortfolioPage.portfolioPageRoute,
-                      ),
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      left: Sizes.MARGIN_20,
+                      top: Sizes.MARGIN_20,
+                      bottom: Sizes.MARGIN_20,
+                    ),
+                    child: MenuList(
+                      menuList: Data.menuList,
+                      selectedItemRouteName: PortfolioPage.portfolioPageRoute,
                     ),
                   ),
-                  ContentWrapper(
-                    width: assignWidth(
-                      context: context,
-                      fraction: widthOfRightContentWrapperAnimation.value,
-                    ),
-                    color: AppColors.secondaryColor,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: assignWidth(
-                              context: context,
-                              fraction: widthOfPortfolioAnimation.value),
-                          padding: EdgeInsets.symmetric(
-                            horizontal:
-                                assignWidth(context: context, fraction: 0.04),
-                            vertical:
-                                assignHeight(context: context, fraction: 0.04),
-                          ),
-                          child: _isPortfolioVisible
-                              ? _buildPortfolioGallery()
-                              : Container(),
-                        ),
-                        SizedBox(
-                          width: assignWidth(
-                            context: context,
-                            fraction: 0.025,
-                          ),
-                        ),
-                        TrailingInfo(
-                          width: assignWidth(
-                            context: context,
-                            fraction: 0.075,
-                          ),
-                          trailingWidget: CustomScroller(
-                            onUpTap: () {
-                              _scroll(
-                                  _scrollController.position.minScrollExtent);
-                            },
-                            onDownTap: () {
-                              _scroll(
-                                  _scrollController.position.maxScrollExtent);
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
+                ),
+                ContentWrapper(
+                  width: assignWidth(
+                    context: context,
+                    fraction: widthOfRightContentWrapperAnimation.value,
                   ),
-                ],
-              )
-            ],
-          ),
+                  color: AppColors.secondaryColor,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: assignWidth(
+                            context: context,
+                            fraction: widthOfPortfolioAnimation.value),
+                        padding: EdgeInsets.symmetric(
+                          horizontal:
+                              assignWidth(context: context, fraction: 0.04),
+                          vertical:
+                              assignHeight(context: context, fraction: 0.04),
+                        ),
+                        child: _isPortfolioVisible
+                            ? _buildPortfolioGallery()
+                            : Container(),
+                      ),
+                      SizedBox(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.025,
+                        ),
+                      ),
+                      TrailingInfo(
+                        width: assignWidth(
+                          context: context,
+                          fraction: 0.075,
+                        ),
+                        trailingWidget: CustomScroller(
+                          onUpTap: () {
+                            _scroll(
+                                _scrollController.position.minScrollExtent);
+                          },
+                          onDownTap: () {
+                            _scroll(
+                                _scrollController.position.maxScrollExtent);
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
 //        Positioned(
 //          child: FadeTransition(
@@ -231,11 +231,9 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: _buildAnimation,
-        ),
+      body: AnimatedBuilder(
+        animation: _controller,
+        builder: _buildAnimation,
       ),
     );
   }
@@ -327,7 +325,7 @@ class _PortfolioPageDesktopState extends State<PortfolioPageDesktop>
   _scroll(double offset) {
     _scrollController.animateTo(
       offset,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeIn,
     );
   }

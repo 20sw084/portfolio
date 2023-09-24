@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/values/values.dart';
 
@@ -15,9 +13,9 @@ class AppTheme {
     return ThemeData(
       colorScheme: colorScheme,
       textTheme: _textTheme,
-      iconTheme: IconThemeData(color: AppColors.white),
+      iconTheme: const IconThemeData(color: AppColors.white),
       canvasColor: colorScheme.background,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         color: AppColors.deepBlue700,
       ),
       scaffoldBackgroundColor: colorScheme.background,
@@ -128,85 +126,85 @@ class AppTheme {
 //      fontStyle: FontStyle.normal,
 //    ),
 //  );
-  static final TextTheme _textTheme = TextTheme(
-    headline1: TextStyle(
+  static const TextTheme _textTheme = TextTheme(
+    displayLarge: TextStyle(
       fontFamily: StringConst.CIRCE,
       fontSize: Sizes.TEXT_SIZE_96,
       color: AppColors.primaryColor,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline2: TextStyle(
+    displayMedium: TextStyle(
       fontFamily: StringConst.CIRCE,
       fontSize: Sizes.TEXT_SIZE_60,
       color: AppColors.primaryColor,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline3: TextStyle(
+    displaySmall: TextStyle(
       fontFamily: StringConst.PROXIMA_NOVA,
       fontSize: Sizes.TEXT_SIZE_48,
       color: AppColors.primaryColor,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline4: TextStyle(
+    headlineMedium: TextStyle(
       fontFamily: StringConst.CIRCE,
       fontSize: Sizes.TEXT_SIZE_34,
       color: AppColors.primaryColor,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline5: TextStyle(
+    headlineSmall: TextStyle(
       fontFamily: StringConst.PROXIMA_NOVA,
       fontSize: Sizes.TEXT_SIZE_24,
       color: AppColors.primaryColor,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline6: TextStyle(
+    titleLarge: TextStyle(
       fontFamily: StringConst.CIRCE,
       fontSize: Sizes.TEXT_SIZE_20,
       color: AppColors.primaryColor,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    subtitle1: TextStyle(
+    titleMedium: TextStyle(
       fontFamily: StringConst.CIRCE,
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.secondaryColor,
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    subtitle2: TextStyle(
+    titleSmall: TextStyle(
       fontFamily: StringConst.PROXIMA_NOVA,
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.secondaryColor,
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    bodyText1: TextStyle(
+    bodyLarge: TextStyle(
       fontFamily: StringConst.CIRCE,
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.secondaryColor,
       fontWeight: _regular,
       fontStyle: FontStyle.normal,
     ),
-    bodyText2: TextStyle(
+    bodyMedium: TextStyle(
       fontFamily: StringConst.PROXIMA_NOVA,
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.secondaryColor,
       fontWeight: _light,
       fontStyle: FontStyle.normal,
     ),
-    button: TextStyle(
+    labelLarge: TextStyle(
       fontFamily: StringConst.PROXIMA_NOVA,
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.secondaryColor,
       fontStyle: FontStyle.normal,
       fontWeight: _medium,
     ),
-    caption: TextStyle(
+    bodySmall: TextStyle(
       fontFamily: StringConst.CIRCE,
       fontSize: Sizes.TEXT_SIZE_12,
       color: AppColors.white,

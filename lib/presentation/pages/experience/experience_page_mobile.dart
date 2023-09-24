@@ -8,6 +8,8 @@ import 'package:my_portfolio/values/values.dart';
 class ExperiencePageMobile extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
+  ExperiencePageMobile({super.key});
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -17,7 +19,7 @@ class ExperiencePageMobile extends StatelessWidget {
         key: _scaffoldKey,
         backgroundColor: AppColors.deepBlue700,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100.0),
+          preferredSize: const Size.fromHeight(100.0),
           child: CustomAppBar(
             title: StringConst.WORK,
             onLeadingPressed: () {
@@ -31,18 +33,18 @@ class ExperiencePageMobile extends StatelessWidget {
               tabs: _buildTabBar(Data.experienceData),
               indicatorColor: AppColors.complimentColor1,
               labelColor: AppColors.complimentColor1,
-              labelPadding: EdgeInsets.all(Sizes.PADDING_8),
-              labelStyle: theme.textTheme.headline6!.copyWith(
+              labelPadding: const EdgeInsets.all(Sizes.PADDING_8),
+              labelStyle: theme.textTheme.titleLarge!.copyWith(
                 fontSize: Sizes.TEXT_SIZE_16,
                 fontWeight: FontWeight.w600,
               ),
               unselectedLabelColor: AppColors.accentColor,
-              unselectedLabelStyle: theme.textTheme.bodyText1!.copyWith(
+              unselectedLabelStyle: theme.textTheme.bodyLarge!.copyWith(
                 fontSize: Sizes.TEXT_SIZE_16,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            actions: [],
+            actions: const [],
           ),
         ),
         drawer: AppDrawer(

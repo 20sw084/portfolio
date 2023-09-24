@@ -3,7 +3,8 @@ import 'package:my_portfolio/core/layout/adaptive.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class ContentWrapper extends StatelessWidget {
-  ContentWrapper({
+  const ContentWrapper({
+    super.key,
     this.width,
     this.height,
     this.color = AppColors.grey100,

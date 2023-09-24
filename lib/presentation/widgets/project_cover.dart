@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/values/values.dart';
 
 class ProjectCover extends StatelessWidget {
-  ProjectCover({
+  const ProjectCover({
+    super.key,
     this.width,
     this.height,
     this.offset,
@@ -26,7 +27,7 @@ class ProjectCover extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       height: height,
       child: Stack(
