@@ -67162,7 +67162,7 @@ A.tT.prototype={
 aa(){return new A.Lg(new A.ba(null,t.sW),B.j)}}
 A.Lg.prototype={
 D(a){var s,r,q=this,p=null,o=A.a4(a),n=A.rc($.fO(),"/"),m=A.aY(a,0.8,0),l=o.p3,k=t.p
-m=A.dz(A.bU(A.a([A.cJ(p,A.dd(a,0.2),p),A.ax(p,new A.Ew(A.a([A.bg("Junaid Aslam",l.e.bv(B.m),p),B.ac,A.bg("FLUTTER DEV",l.r.bv(B.m),p)],k),p),p,p,p,p,p,B.k8,p),B.bc,A.dH(!1,p,!0,A.ax(p,A.bU(A.a([new A.w5(3,A.bg("View Portfolio",l.y.cB(B.m,18),B.dw),p),B.vw,B.y6],k),B.n,B.o),p,p,p,p,p,B.k8,p),p,!0,p,p,p,p,p,p,p,p,p,new A.a75(a),p,p,p,p),A.cJ(p,A.dd(a,0.05),p)],k),B.av,B.o),B.l,m)
+m=A.dz(A.bU(A.a([A.cJ(p,A.dd(a,0.2),p),A.ax(p,new A.Ew(A.a([A.bg("Junaid Aslam",l.e.bv(B.m),p),B.ac,A.bg("JAVA & FLUTTER DEV",l.r.bv(B.m),p)],k),p),p,p,p,p,p,B.k8,p),B.bc,A.dH(!1,p,!0,A.ax(p,A.bU(A.a([new A.w5(3,A.bg("View Portfolio",l.y.cB(B.m,18),B.dw),p),B.vw,B.y6],k),B.n,B.o),p,p,p,p,p,B.k8,p),p,!0,p,p,p,p,p,p,p,p,p,new A.a75(a),p,p,p,p),A.cJ(p,A.dd(a,0.05),p)],k),B.av,B.o),B.l,m)
 l=A.aY(a,0.2,0)
 l=A.bU(A.a([A.bC(A.a([m,A.dz(A.ax(p,p,p,p,p,p,p,p,p),B.m,l)],k),B.n,B.o,B.E)],k),B.n,B.o)
 m=q.SV()
@@ -68126,7 +68126,7 @@ o.push(B.I1)
 o.push(B.bc)
 s=p.p3
 o.push(A.bg("Junaid Aslam",s.e.bv(B.m),q))
-o.push(A.bg("FLUTTER DEV",s.r.bv(B.m),q))
+o.push(A.bg("JAVA & FLUTTER DEV",s.r.bv(B.m),q))
 o.push(B.ih)
 s=s.y
 r=t.p
