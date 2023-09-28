@@ -4,7 +4,7 @@ class StringConst {
   //strings
   static const String APP_NAME = "Junaid Aslam";
   static const String APP_TITLE = "Junaid Aslam Portfolio";
-  static const String SITE_URL = "https://davidcobbina.com";
+  static const String SITE_URL = "https://20sw084.github.io/";
 
   static const String HOME = "Home";
   static const String ABOUT_ME = "About Me";
@@ -37,17 +37,17 @@ class StringConst {
 
   static const String INTRO = "Hi, my name is";
   static const String DEV_NAME = "Junaid Aslam";
-  static const String PUNCH_LINE = "I build things with flutter";
-  static const String SPECIALITY = "FLUTTER DEV";
+  static const String PUNCH_LINE = "I build things with Flutter and Java";
+  static const String SPECIALITY = "JAVA & FLUTTER DEV";
   static const String DESIGNED_IN = "Made in Pakistan with ";
-  static const String DESIGNED_BY = "Designed by Pavel G. ";
+  static const String DESIGNED_BY = "Designed by David C. ";
   static const String BUILT_BY = "Built by Junaid Aslam ";
 
   static const String ABOUT_DEV_TEXT =
-      "I am a software engineer residing in Pakistan, with a specialization in crafting top-notch mobile and web applications. My fervor lies in contributing to open-source projects. My primary objective is to consistently create flawlessly designed, high-performance applications that deliver users a superb and immersive experience.";
+      "I am a Software Engineer residing in Pakistan, with a specialization in crafting top-notch Mobile and Desktop Applications. My fervor lies in contributing to open-source projects. My primary objective is to consistently create flawlessly designed, high-performance applications that deliver users a superb and immersive experience.";
 
   static const String EDUCATION_TEXT =
-      "I am a self-taught programmer who holds a Software Engineering degree from Mehran University of Engineering & Technology, Jamshoro. My passion revolves around continuous learning and the art of coding.";
+      "I am a self-taught Programmer who holds a Software Engineering degree from Mehran University of Engineering & Technology, Jamshoro. My passion revolves around continuous learning and the art of coding.";
   //Form Hint Texts
   static const String NAME_HINT_TEXT = "Name";
   static const String PHONE_HINT_TEXT = "Phone (Optional)";
