@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { skills } from '../data/content'
+import { skills, learningNow } from '../data/content'
 
 export default function Skills() {
   return (
@@ -35,6 +35,24 @@ export default function Skills() {
           </motion.div>
         ))}
       </div>
+
+      <motion.div
+        className="learning-card"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.45 }}
+      >
+        <div className="skill-group-title">{learningNow.label}</div>
+        <div className="skill-chips">
+          {learningNow.items.map((item) => (
+            <span className="skill-chip learning" key={item}>
+              {item}
+            </span>
+          ))}
+        </div>
+        <p className="learning-note">{learningNow.note}</p>
+      </motion.div>
     </section>
   )
 }

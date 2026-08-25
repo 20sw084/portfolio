@@ -16,7 +16,7 @@ export const profile = {
   upwork: 'https://www.upwork.com/freelancers/~01e3372ae04f24797d',
   upworkHandle: 'Upwork · 4.8★',
   summary:
-    "I build and ship full-stack products (backend services, APIs, and the interfaces on top of them) for teams that need working software, not a longer roadmap. Four years in, split between independent client delivery and in-house fintech work. Take a rough requirement, design the data model and API, build the service, wire up the client, containerise it, ship it, then stay on to maintain it.",
+    "I build and ship full-stack products (backend services, APIs, and the interfaces on top of them) for teams that need working software, not a longer roadmap. Four years in, split between independent client delivery and in-house fintech work. Take a rough requirement, design the data model and API, build the service, test it, wire up the client, containerise it, ship it, then stay on to maintain it.",
   aiNote:
     "Cursor and Claude Code are in my daily toolchain. They compress the unglamorous 60% of delivery (scaffolding, test coverage, refactors, boilerplate, migrations), so the time stays on architecture and edge cases. In practice, that's the difference between a six-week MVP and a six-month one.",
   openTo: [
@@ -45,8 +45,9 @@ export const experience = [
       'Built and shipped multi-tenant virtual account management, crypto-to-fiat conversion modules, and high-limit card issuance UI using Nest.js, React, Tailwind CSS, and PostgreSQL, cutting partner fintech integration time from 3 months to 5 days.',
       'Designed REST API orchestration connecting U.S./EU banking rails, SAFE Trust custody, and third-party liquidity providers, enabling multi-asset settlement and cutting manual compliance work by 25 hrs/week.',
       'Introduced event-driven audit logging, automated KYC/AML abstractions, and SOC 2-ready access controls, which accelerated MVP delivery from 6 months to under 5 and cut production release defects by 45%.',
+      'Designed and implemented unit and integration testing frameworks, deployed services on Microsoft Azure and Google Cloud Platform (GCP), and streamlined CI/CD pipelines with cross-functional teams.',
     ],
-    tags: ['Nest.js', 'React', 'Tailwind', 'PostgreSQL', 'Fintech'],
+    tags: ['Nest.js', 'React', 'Tailwind', 'PostgreSQL', 'GCP', 'TDD'],
   },
   {
     company: 'FAST-NUCES, Karachi Campus',
@@ -180,7 +181,7 @@ export const projects = [
 export const skills = [
   {
     group: 'Backend',
-    items: ['Node.js', 'Nest.js', 'Python / FastAPI', 'Java', 'REST APIs', 'Microservices'],
+    items: ['Node.js', 'Nest.js', 'Python / FastAPI', 'Pydantic', 'Java', 'REST APIs', 'Microservices'],
   },
   {
     group: 'Frontend & Mobile',
@@ -188,7 +189,7 @@ export const skills = [
   },
   {
     group: 'Data',
-    items: ['PostgreSQL', 'MySQL', 'Redis', 'Firebase', 'Cloud Firestore'],
+    items: ['SQL', 'PostgreSQL', 'MySQL', 'Redis', 'Firebase', 'Cloud Firestore'],
   },
   {
     group: 'Cloud & DevOps',
@@ -196,13 +197,19 @@ export const skills = [
   },
   {
     group: 'Quality & Testing',
-    items: ['Selenium', 'Playwright', 'Cypress', 'Pytest', 'TDD', 'SDET Practices'],
+    items: ['Pytest', 'JUnit', 'Selenium', 'Playwright', 'Cypress', 'TDD', 'SDET Practices'],
   },
   {
     group: 'AI-Assisted Development',
     items: ['Cursor', 'Claude Code', 'Prompt Engineering'],
   },
 ]
+
+export const learningNow = {
+  label: 'Currently deepening',
+  note: "Ramping up on these deliberately, not claiming mastery yet.",
+  items: ['Kafka', 'Airflow', 'Spock', 'jOOQ', 'SparkJava'],
+}
 
 export const terminalHelp = [
   { cmd: 'about', desc: 'who is Junaid' },
