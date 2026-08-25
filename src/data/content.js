@@ -13,6 +13,8 @@ export const profile = {
   githubHandle: 'github.com/20sw084',
   linkedin: 'https://www.linkedin.com/in/20sw084/',
   linkedinHandle: 'linkedin.com/in/20sw084',
+  upwork: 'https://www.upwork.com/freelancers/~01e3372ae04f24797d',
+  upworkHandle: 'Upwork · 4.8★',
   summary:
     "I build and ship full-stack products — backend services, APIs, and the interfaces on top of them — for teams that need working software, not a longer roadmap. Four years in, split between independent client delivery and in-house fintech work. Take a rough requirement, design the data model and API, build the service, wire up the client, containerise it, ship it, then stay on to maintain it.",
   aiNote:
@@ -209,6 +211,7 @@ export const terminalHelp = [
   { cmd: 'skills', desc: 'jump to tech stack' },
   { cmd: 'contact', desc: 'jump to contact section' },
   { cmd: 'resume', desc: 'open the CV' },
+  { cmd: 'upwork', desc: 'open Upwork profile' },
   { cmd: 'sudo hire junaid', desc: '???' },
   { cmd: 'clear', desc: 'clear the terminal' },
 ]

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiCopy, FiCheck, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
+import { SiUpwork } from 'react-icons/si'
 import { profile } from '../data/content'
 
 export default function Contact() {
@@ -50,6 +51,9 @@ export default function Contact() {
           </a>
           <a className="contact-social" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <FiLinkedin />
+          </a>
+          <a className="contact-social" href={profile.upwork} target="_blank" rel="noreferrer" aria-label="Upwork">
+            <SiUpwork />
           </a>
           <a className="contact-social" href={`mailto:${profile.email}`} aria-label="Email">
             <FiMail />

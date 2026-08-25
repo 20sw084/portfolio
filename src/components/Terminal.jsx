@@ -47,6 +47,9 @@ export default function Terminal() {
     } else if (key === 'resume' || key === 'cv') {
       window.open('/Junaid_Aslam_Resume.pdf', '_blank')
       setLines((prev) => [...prev, '→ opening résumé in a new tab'])
+    } else if (key === 'upwork') {
+      window.open('https://www.upwork.com/freelancers/~01e3372ae04f24797d', '_blank')
+      setLines((prev) => [...prev, '→ opening Upwork profile in a new tab'])
     } else if (key === 'whoami') {
       setLines((prev) => [...prev, 'a recruiter with good taste, obviously'])
     } else if (key === 'sudo hire junaid') {

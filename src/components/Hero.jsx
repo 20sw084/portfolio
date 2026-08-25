@@ -59,6 +59,7 @@ export default function Hero() {
           <span>{profile.location}</span>
           <span>{profile.githubHandle}</span>
           <span>{profile.linkedinHandle}</span>
+          <span>{profile.upworkHandle}</span>
         </div>
       </motion.div>
 
