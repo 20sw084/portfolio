@@ -13,7 +13,7 @@ export default function Contact() {
       setCopied(true)
       setTimeout(() => setCopied(false), 1800)
     } catch {
-      // clipboard unavailable — no-op
+      // clipboard unavailable, no-op
     }
   }
 

@@ -80,7 +80,7 @@ export default function Terminal() {
               <span />
               <span />
             </div>
-            <span>junaid@portfolio — zsh</span>
+            <span>junaid@portfolio: zsh</span>
             <button className="terminal-close" onClick={() => setOpen(false)} aria-label="Close terminal">
               ×
             </button>
